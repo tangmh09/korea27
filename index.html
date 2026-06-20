@@ -584,45 +584,94 @@
             });
         });
 
-        // Scrollspy to highlight active day in sidebar
+        // Elements for Scrollspy
         const daySections = document.querySelectorAll('div[id^="day-"]');
         const sidebarLinks = document.querySelectorAll('aside a[href^="#day-"]');
+        
+        const mainSections = document.querySelectorAll('section[id]');
+        const mobileLinks = document.querySelectorAll('nav a.scroll-link');
 
         window.addEventListener('scroll', () => {
-            let current = '';
+            /* ---------------------------------------------------
+               1. DESKTOP SIDEBAR LOGIC (Highlighting Days)
+            --------------------------------------------------- */
+            let currentDay = '';
             daySections.forEach(section => {
-                // Fix: calculate position relative to the visible window (viewport), not the parent div
                 const rect = section.getBoundingClientRect();
-                
-                // Trigger highlight when the section reaches the upper portion of the screen (top 40%)
                 if (rect.top <= window.innerHeight * 0.4) { 
-                    current = section.getAttribute('id');
+                    currentDay = section.getAttribute('id');
                 }
             });
 
-            // Ensure first item is highlighted if we are at the very top but haven't technically reached it
-            if (!current && window.scrollY > 0 && daySections.length > 0) {
+            // Ensure first item is highlighted at top
+            if (!currentDay && window.scrollY > 0 && daySections.length > 0) {
                 const firstRect = daySections[0].getBoundingClientRect();
                 if (firstRect.top < window.innerHeight) {
-                    current = daySections[0].getAttribute('id');
+                    currentDay = daySections[0].getAttribute('id');
                 }
             }
 
             sidebarLinks.forEach(link => {
-                // Reset styling for all links
                 link.classList.remove('font-bold', 'text-blossom-600', 'text-teal-600', 'translate-x-1', 'transform', 'transition-all');
                 link.classList.add('text-slate-500');
                 
-                // Add active styling to the currently viewed link
-                if (link.getAttribute('href') === `#${current}`) {
+                if (link.getAttribute('href') === `#${currentDay}`) {
                     link.classList.remove('text-slate-500');
                     link.classList.add('font-bold', 'translate-x-1', 'transform', 'transition-all', 'duration-300');
                     
-                    // Color coordinate based on location (Teal for Jeju, Blossom for Seoul)
-                    if (['day-6', 'day-7', 'day-8', 'day-9'].includes(current)) {
+                    if (['day-6', 'day-7', 'day-8', 'day-9'].includes(currentDay)) {
                         link.classList.add('text-teal-600');
                     } else {
                         link.classList.add('text-blossom-600');
+                    }
+                }
+            });
+
+            /* ---------------------------------------------------
+               2. MOBILE NAV LOGIC (Highlighting Sections)
+            --------------------------------------------------- */
+            let currentSection = '';
+            mainSections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                // Trigger highlight when section reaches upper 30% of screen
+                if (rect.top <= window.innerHeight * 0.3) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            // Fallback for top of page
+            if (!currentSection || window.scrollY < 100) {
+                currentSection = 'overview';
+            }
+
+            mobileLinks.forEach(link => {
+                // Reset styling
+                link.classList.remove('border-blossom-500', 'text-blossom-600', 'border-teal-500', 'text-teal-600', 'border-slate-800', 'text-slate-800');
+                link.classList.add('border-transparent', 'text-slate-500');
+
+                // Apply active styling
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.remove('border-transparent', 'text-slate-500');
+                    
+                    // Theme color based on section
+                    if (currentSection === 'jeju') {
+                        link.classList.add('border-teal-500', 'text-teal-600');
+                    } else if (currentSection === 'seoul-1' || currentSection === 'seoul-2') {
+                        link.classList.add('border-blossom-500', 'text-blossom-600');
+                    } else {
+                        link.classList.add('border-slate-800', 'text-slate-800');
+                    }
+                    
+                    // Auto-scroll the mobile menu horizontally if needed
+                    const navContainer = link.parentElement;
+                    const linkRect = link.getBoundingClientRect();
+                    const containerRect = navContainer.getBoundingClientRect();
+                    
+                    if (linkRect.left < containerRect.left || linkRect.right > containerRect.right) {
+                        navContainer.scrollBy({
+                            left: linkRect.left - containerRect.left - 20,
+                            behavior: 'smooth'
+                        });
                     }
                 }
             });
