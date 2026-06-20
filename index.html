@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Korea 2027: Seoul & Jeju Island</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        blossom: {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { scroll-behavior: smooth; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Custom timeline line that stays on the left */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 1.25rem; /* Aligns with the center of the 2.5rem (w-10) icon */
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, #e2e8f0 5%, #e2e8f0 95%, transparent);
+            z-index: 0;
+        }
+        .timeline-line-teal::before {
+            background: linear-gradient(to bottom, transparent, #ccfbf1 5%, #ccfbf1 95%, transparent);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blossom-200 selection:text-blossom-900">
+
+    <!-- Mobile Top Navigation (Visible only on smaller screens) -->
+    <nav class="lg:hidden fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <i data-lucide="map" class="text-blossom-500 w-5 h-5"></i>
+                <h1 class="font-bold text-slate-800 text-lg truncate">South Korea '27</h1>
+            </div>
+        </div>
+        <div class="px-4 pb-0 overflow-x-auto hide-scrollbar flex gap-6 text-sm font-semibold text-slate-500">
+            <a href="#overview" class="pb-3 border-b-2 border-transparent hover:text-slate-800 whitespace-nowrap">Overview</a>
+            <a href="#seoul-1" class="pb-3 border-b-2 border-transparent hover:text-slate-800 whitespace-nowrap">Seoul (Pt 1)</a>
+            <a href="#jeju" class="pb-3 border-b-2 border-transparent hover:text-slate-800 whitespace-nowrap">Jeju Island</a>
+            <a href="#seoul-2" class="pb-3 border-b-2 border-transparent hover:text-slate-800 whitespace-nowrap">Seoul (Pt 2)</a>
+        </div>
+    </nav>
+
+    <!-- Main Layout Container -->
+    <div class="flex max-w-7xl mx-auto">
+        
+        <!-- Desktop Sidebar Navigation -->
+        <aside class="hidden lg:block w-64 shrink-0 h-screen sticky top-0 overflow-y-auto border-r border-slate-200 bg-white/50 backdrop-blur-sm p-6 hide-scrollbar">
+            <div class="flex items-center gap-2 mb-8">
+                <i data-lucide="map" class="text-blossom-500 w-6 h-6"></i>
+                <h1 class="font-bold text-slate-800 text-xl tracking-tight">South Korea '27</h1>
+            </div>
+            
+            <nav class="space-y-6">
+                <div>
+                    <a href="#overview" class="font-bold text-slate-800 hover:text-blossom-600 block mb-2 transition-colors">Overview</a>
+                </div>
+                
+                <div>
+                    <a href="#seoul-1" class="font-bold text-slate-800 hover:text-blossom-600 block mb-2 transition-colors">Seoul (Pt 1)</a>
+                    <ul class="space-y-2 pl-4 border-l-2 border-slate-100 text-sm">
+                        <li><a href="#day-1" class="text-slate-500 hover:text-blossom-600 block">Day 1: Arrival</a></li>
+                        <li><a href="#day-2" class="text-slate-500 hover:text-blossom-600 block">Day 2: Palaces & Traditions</a></li>
+                        <li><a href="#day-3" class="text-slate-500 hover:text-blossom-600 block">Day 3: Views & Culture</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <a href="#jeju" class="font-bold text-slate-800 hover:text-teal-600 block mb-2 transition-colors">Jeju Island</a>
+                    <ul class="space-y-2 pl-4 border-l-2 border-slate-100 text-sm">
+                        <li><a href="#day-4" class="text-slate-500 hover:text-teal-600 block">Day 4: Hello, Jeju!</a></li>
+                        <li><a href="#day-5" class="text-slate-500 hover:text-teal-600 block">Day 5: West & South</a></li>
+                        <li><a href="#day-6" class="text-slate-500 hover:text-teal-600 block">Day 6: Sunrise Peak</a></li>
+                        <li><a href="#day-7" class="text-slate-500 hover:text-teal-600 block">Day 7: Udo Island</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <a href="#seoul-2" class="font-bold text-slate-800 hover:text-blossom-600 block mb-2 transition-colors">Seoul (Pt 2)</a>
+                    <ul class="space-y-2 pl-4 border-l-2 border-slate-100 text-sm">
+                        <li><a href="#day-8" class="text-slate-500 hover:text-blossom-600 block">Day 8: Return</a></li>
+                        <li><a href="#day-9" class="text-slate-500 hover:text-blossom-600 block">Day 9: Cherry Blossoms</a></li>
+                        <li><a href="#day-10" class="text-slate-500 hover:text-blossom-600 block">Day 10: Lake Blooms</a></li>
+                        <li><a href="#day-11" class="text-slate-500 hover:text-blossom-600 block">Day 11: Trendy Cafes</a></li>
+                        <li><a href="#day-12" class="text-slate-500 hover:text-blossom-600 block">Day 12: Shopping</a></li>
+                        <li><a href="#day-13" class="text-slate-500 hover:text-blossom-600 block">Day 13: Departure</a></li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="mt-8 pt-6 border-t border-slate-200">
+                <button onclick="window.print()" class="flex items-center gap-2 text-sm text-slate-500 hover:text-slate-800 transition-colors w-full p-2 rounded-lg hover:bg-slate-100">
+                    <i data-lucide="printer" class="w-4 h-4"></i>
+                    Print Itinerary
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 w-full lg:max-w-3xl lg:px-12 pb-20 pt-28 lg:pt-12 px-4 mx-auto">
+            
+            <!-- Header / Hero -->
+            <header id="overview" class="mb-12 scroll-mt-24">
+                <span class="inline-block py-1 px-3 rounded-full bg-blossom-100 text-blossom-600 text-xs font-bold uppercase tracking-wider mb-4">Spring Break 2027</span>
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">Chasing Cherry Blossoms</h2>
+                <p class="text-lg text-slate-600 mb-8 max-w-xl">13 Days exploring the historical streets of Seoul and the natural volcanic wonders of Jeju Island during peak spring bloom.</p>
+                
+                <div class="grid grid-cols-2 gap-4 text-left max-w-md">
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+                        <i data-lucide="calendar" class="w-6 h-6 text-blossom-500 mb-2"></i>
+                        <p class="text-xs text-slate-500 font-medium">Dates</p>
+                        <p class="font-bold text-slate-800 text-sm">26 Mar - 07 Apr</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+                        <i data-lucide="map-pin" class="w-6 h-6 text-blossom-500 mb-2"></i>
+                        <p class="text-xs text-slate-500 font-medium">Destinations</p>
+                        <p class="font-bold text-slate-800 text-sm">Seoul & Jeju</p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Action Needed Alert -->
+            <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-xl flex gap-3 mb-12">
+                <i data-lucide="info" class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5"></i>
+                <div>
+                    <h3 class="font-bold text-amber-800">To-Do List</h3>
+                    <p class="text-sm text-amber-700 mt-1">Don't forget to book your domestic flights from <strong>Seoul Gimpo (GMP) to Jeju (CJU)</strong> for Mar 29, and the return for Apr 2. Also, secure a rental car in Jeju in advance!</p>
+                </div>
+            </div>
+
+            <!-- Itinerary: Seoul Part 1 -->
+            <section id="seoul-1" class="scroll-mt-8 mb-16">
+                <div class="mb-8">
+                    <span class="text-blossom-600 font-bold tracking-wider uppercase text-sm">Part 1</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Hello, Seoul!</h2>
+                    <p class="text-slate-500 mt-2">Settle in and explore the historical heart of South Korea.</p>
+                </div>
+
+                <!-- Single Column Timeline -->
+                <div class="space-y-8 relative timeline-line">
+                    
+                    <!-- Day 1 -->
+                    <div id="day-1" class="relative flex items-start gap-6 scroll-mt-24 group">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-50 bg-blossom-100 text-blossom-600 shadow-sm shrink-0 z-10 group-hover:scale-110 transition-transform">
+                            <span class="font-bold text-sm">1</span>
+                        </div>
+                        <div class="flex-1 bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                            <div class="mb-1 text-blossom-600 font-semibold text-sm tracking-wide uppercase">Fri, 26 Mar</div>
+                            <h3 class="font-bold text-xl text-slate-800 mb-4">Arrival in Seoul</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="plane-landing" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>3:40 PM:</strong> Arrive at Incheon (ICN). Take the AREX express train to the city.</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="hotel" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>5:30 PM:</strong> Check into your hotel (Myeongdong or Hongdae recommended).</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="utensils" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>7:00 PM:</strong> Welcome dinner! Grab Korean BBQ and explore Myeongdong Night Market.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Day 2 -->
+                    <div id="day-2" class="relative flex items-start gap-6 scroll-mt-24 group">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-50 bg-white text-slate-500 shadow-sm shrink-0 z-10 group-hover:scale-110 transition-transform">
+                            <span class="font-bold text-sm">2</span>
+                        </div>
+                        <div class="flex-1 bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                            <div class="mb-1 text-slate-500 font-semibold text-sm tracking-wide uppercase">Sat, 27 Mar</div>
+                            <h3 class="font-bold text-xl text-slate-800 mb-4">Palaces & Traditions</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="camera" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>9:30 AM:</strong> Gyeongbokgung Palace. Rent a Hanbok nearby for free entry and amazing photos.</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="map" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>2:00 PM:</strong> Stroll through Bukchon Hanok Village and Insadong for traditional tea and crafts.</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="utensils" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>7:00 PM:</strong> Dinner at Gwangjang Market (Try Bindaetteok - mung bean pancakes).</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Day 3 -->
+                    <div id="day-3" class="relative flex items-start gap-6 scroll-mt-24 group">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-50 bg-white text-slate-500 shadow-sm shrink-0 z-10 group-hover:scale-110 transition-transform">
+                            <span class="font-bold text-sm">3</span>
+                        </div>
+                        <div class="flex-1 bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                            <div class="mb-1 text-slate-500 font-semibold text-sm tracking-wide uppercase">Sun, 28 Mar</div>
+                            <h3 class="font-bold text-xl text-slate-800 mb-4">Views & Culture</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="mountain" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>10:00 AM:</strong> N Seoul Tower via Namsan Cable Car. Look out for early spring blooms in the park!</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="coffee" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>1:00 PM:</strong> Head to Itaewon/Hannam-dong for a trendy lunch and cafe hopping.</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="landmark" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>3:30 PM:</strong> Visit the spectacular National Museum of Korea.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Itinerary: Jeju Island -->
+            <section id="jeju" class="scroll-mt-8 mb-16">
+                <div class="mb-8 p-6 bg-gradient-to-r from-teal-50 to-emerald-50 rounded-2xl border border-teal-100">
+                    <span class="text-teal-600 font-bold tracking-wider uppercase text-sm">Part 2</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Jeju Island</h2>
+                    <p class="text-slate-600 mt-2">Fly south for volcanic landscapes, coastal drives, and peak Jeju Cherry Blossoms.</p>
+                </div>
+
+                <!-- Single Column Timeline - Teal Theme -->
+                <div class="space-y-8 relative timeline-line timeline-line-teal">
+                    
+                    <!-- Day 4 -->
+                    <div id="day-4" class="relative flex items-start gap-6 scroll-mt-24 group">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-50 bg-teal-100 text-teal-600 shadow-sm shrink-0 z-10 group-hover:scale-110 transition-transform">
+                            <span class="font-bold text-sm">4</span>
+                        </div>
+                        <div class="flex-1 bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                            <div class="mb-1 text-teal-600 font-semibold text-sm tracking-wide uppercase">Mon, 29 Mar</div>
+                            <h3 class="font-bold text-xl text-slate-800 mb-4">Hello, Jeju!</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="plane" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>Morning:</strong> Fly from Seoul Gimpo (GMP) to Jeju (CJU) and pick up rental car.</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="flower-2" class="w-5 h-5 mt-0.5 text-teal-500 shrink-0"></i>
+                                    <span><strong>11:30 AM:</strong> Drive through <strong>Jeonnong-ro Cherry Blossom Street</strong>. Late March is peak bloom in Jeju!</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="waves" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>2:00 PM:</strong> Walk the Aewol Handam Coastal Trail and grab coffee at a seaside cafe.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Day 5 -->
+                    <div id="day-5" class="relative flex items-start gap-6 scroll-mt-24 group">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-50 bg-white text-slate-500 shadow-sm shrink-0 z-10 group-hover:scale-110 transition-transform">
+                            <span class="font-bold text-sm">5</span>
+                        </div>
+                        <div class="flex-1 bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                            <div class="mb-1 text-slate-500 font-semibold text-sm tracking-wide uppercase">Tue, 30 Mar</div>
+                            <h3 class="font-bold text-xl text-slate-800 mb-4">West & South Wonders</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="leaf" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>9:30 AM:</strong> Osulloc Tea Museum & Innisfree Jeju House.</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="mountain" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>12:00 PM:</strong> See Sanbangsan Mountain, surrounded by bright yellow canola flowers.</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="droplets" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>4:00 PM:</strong> View Cheonjiyeon Waterfall in Seogwipo.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Day 6 -->
+                    <div id="day-6" class="relative flex items-start gap-6 scroll-mt-24 group">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-50 bg-white text-slate-500 shadow-sm shrink-0 z-10 group-hover:scale-110 transition-transform">
+                            <span class="font-bold text-sm">6</span>
+                        </div>
+                        <div class="flex-1 bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                            <div class="mb-1 text-slate-500 font-semibold text-sm tracking-wide uppercase">Wed, 31 Mar</div>
+                            <h3 class="font-bold text-xl text-slate-800 mb-4">Sunrise Peak & East Coast</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="sun" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>9:00 AM:</strong> Hike Seongsan Ilchulbong (Sunrise Peak) for volcanic crater views.</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="eye" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>11:30 AM:</strong> Watch the famous Haenyeo (Women Divers) demonstration nearby.</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="map" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>2:30 PM:</strong> Walk the stunning Seopjikoji coastal trails.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Day 7 -->
+                    <div id="day-7" class="relative flex items-start gap-6 scroll-mt-24 group">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-50 bg-white text-slate-500 shadow-sm shrink-0 z-10 group-hover:scale-110 transition-transform">
+                            <span class="font-bold text-sm">7</span>
+                        </div>
+                        <div class="flex-1 bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                            <div class="mb-1 text-slate-500 font-semibold text-sm tracking-wide uppercase">Thu, 01 Apr</div>
+                            <h3 class="font-bold text-xl text-slate-800 mb-4">Udo Island Getaway</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="ship" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>9:00 AM:</strong> Take the short ferry from Seongsan Port to Udo Island.</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="bike" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>10:30 AM:</strong> Rent electric bikes to circumnavigate the island. Try Udo Peanut Ice Cream!</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="utensils" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>7:00 PM:</strong> Back on Jeju, treat yourselves to authentic Jeju Black Pork BBQ.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Itinerary: Seoul Part 2 -->
+            <section id="seoul-2" class="scroll-mt-8 mb-16">
+                <div class="mb-8">
+                    <span class="text-blossom-600 font-bold tracking-wider uppercase text-sm">Part 3</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Seoul in Full Bloom</h2>
+                    <p class="text-slate-500 mt-2">Return to the capital just in time for the spectacular cherry blossom peak.</p>
+                </div>
+
+                <!-- Single Column Timeline -->
+                <div class="space-y-8 relative timeline-line">
+                    
+                    <!-- Day 8 -->
+                    <div id="day-8" class="relative flex items-start gap-6 scroll-mt-24 group">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-50 bg-blossom-100 text-blossom-600 shadow-sm shrink-0 z-10 group-hover:scale-110 transition-transform">
+                            <span class="font-bold text-sm">8</span>
+                        </div>
+                        <div class="flex-1 bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                            <div class="mb-1 text-blossom-600 font-semibold text-sm tracking-wide uppercase">Fri, 02 Apr</div>
+                            <h3 class="font-bold text-xl text-slate-800 mb-4">Return to the Capital</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="shopping-bag" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>9:00 AM:</strong> Dongmun Market in Jeju for souvenirs (Hallabong orange chocolates!).</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="plane-takeoff" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>Midday:</strong> Fly from Jeju (CJU) back to Seoul Gimpo (GMP).</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="building" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>4:00 PM:</strong> Check into Seoul hotel. Visit Starfield COEX Mall & Library in Gangnam.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Day 9 -->
+                    <div id="day-9" class="relative flex items-start gap-6 scroll-mt-24 group">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-blossom-50 bg-blossom-500 text-white shadow-sm shrink-0 z-10 group-hover:scale-110 transition-transform">
+                            <span class="font-bold text-sm">9</span>
+                        </div>
+                        <div class="flex-1 bg-blossom-50 p-6 rounded-2xl shadow-sm border border-blossom-200 hover:shadow-md transition-shadow">
+                            <div class="mb-1 text-blossom-600 font-semibold text-sm tracking-wide uppercase">Sat, 03 Apr</div>
+                            <h3 class="font-bold text-xl text-slate-800 mb-4">Cherry Blossom Festival</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="flower-2" class="w-5 h-5 mt-0.5 text-blossom-500 shrink-0"></i>
+                                    <span><strong>10:00 AM:</strong> Yeouido Hangang Park. Walk the famous cherry blossom tunnels!</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="pizza" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>12:30 PM:</strong> Picnic by the Han River. Order 'Chimaek' (fried chicken and beer) like a local.</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="music" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>6:00 PM:</strong> Explore Hongdae for youthful energy, street buskers, and shopping.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Day 10 -->
+                    <div id="day-10" class="relative flex items-start gap-6 scroll-mt-24 group">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-50 bg-white text-slate-500 shadow-sm shrink-0 z-10 group-hover:scale-110 transition-transform">
+                            <span class="font-bold text-sm">10</span>
+                        </div>
+                        <div class="flex-1 bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                            <div class="mb-1 text-slate-500 font-semibold text-sm tracking-wide uppercase">Sun, 04 Apr</div>
+                            <h3 class="font-bold text-xl text-slate-800 mb-4">Lake Blooms & City Views</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="flower-2" class="w-5 h-5 mt-0.5 text-blossom-500 shrink-0"></i>
+                                    <span><strong>10:00 AM:</strong> Seokchon Lake Park. The lake is entirely surrounded by blooming cherry trees.</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="building" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>2:30 PM:</strong> Head up Seoul Sky Observatory (Lotte World Tower) for panoramas.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Day 11 -->
+                    <div id="day-11" class="relative flex items-start gap-6 scroll-mt-24 group">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-50 bg-white text-slate-500 shadow-sm shrink-0 z-10 group-hover:scale-110 transition-transform">
+                            <span class="font-bold text-sm">11</span>
+                        </div>
+                        <div class="flex-1 bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                            <div class="mb-1 text-slate-500 font-semibold text-sm tracking-wide uppercase">Mon, 05 Apr</div>
+                            <h3 class="font-bold text-xl text-slate-800 mb-4">Trendy Cafes & Design</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="tree-deciduous" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>10:00 AM:</strong> Seoul Forest Park. Enjoy blossoms and vibrant tulip fields.</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="coffee" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>1:00 PM:</strong> Cafe hopping in Seongsu-dong (the "Brooklyn of Seoul").</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="brush" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>4:00 PM:</strong> Dongdaemun Design Plaza (DDP) for futuristic architecture.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Day 12 -->
+                    <div id="day-12" class="relative flex items-start gap-6 scroll-mt-24 group">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-50 bg-white text-slate-500 shadow-sm shrink-0 z-10 group-hover:scale-110 transition-transform">
+                            <span class="font-bold text-sm">12</span>
+                        </div>
+                        <div class="flex-1 bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                            <div class="mb-1 text-slate-500 font-semibold text-sm tracking-wide uppercase">Tue, 06 Apr</div>
+                            <h3 class="font-bold text-xl text-slate-800 mb-4">Last Minute Shopping</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="shopping-cart" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>Morning:</strong> Free time or optional half-day DMZ tour.</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="gift" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>2:00 PM:</strong> Final shopping run in Myeongdong (skincare!) or Namdaemun Market.</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="utensils" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>7:30 PM:</strong> Farewell Dinner! Treat yourselves to premium Korean Hanwoo Beef.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Day 13 -->
+                    <div id="day-13" class="relative flex items-start gap-6 scroll-mt-24 group">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-50 bg-slate-800 text-white shadow-sm shrink-0 z-10 group-hover:scale-110 transition-transform">
+                            <span class="font-bold text-sm">13</span>
+                        </div>
+                        <div class="flex-1 bg-slate-50 p-6 rounded-2xl shadow-sm border border-slate-200 transition-shadow opacity-90">
+                            <div class="mb-1 text-slate-500 font-semibold text-sm tracking-wide uppercase">Wed, 07 Apr</div>
+                            <h3 class="font-bold text-xl text-slate-800 mb-4">Departure</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="train" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
+                                    <span><strong>7:30 AM:</strong> Head to Incheon International Airport (ICN).</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            
+            <footer class="pt-8 border-t border-slate-200 text-slate-400 text-sm">
+                <p>Prepared with ❤️ for your 2027 South Korea Trip</p>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
