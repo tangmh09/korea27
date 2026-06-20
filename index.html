@@ -642,6 +642,43 @@
                 }
             });
         });
+
+        // Scrollspy to highlight active day in sidebar
+        const daySections = document.querySelectorAll('div[id^="day-"]');
+        const sidebarLinks = document.querySelectorAll('aside a[href^="#day-"]');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            daySections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                // Trigger highlight when the section reaches the upper-middle of the screen
+                if (window.scrollY >= (sectionTop - 250)) { 
+                    current = section.getAttribute('id');
+                }
+            });
+
+            sidebarLinks.forEach(link => {
+                // Reset styling for all links
+                link.classList.remove('font-bold', 'text-blossom-600', 'text-teal-600', 'translate-x-1', 'transform', 'transition-all');
+                link.classList.add('text-slate-500');
+                
+                // Add active styling to the currently viewed link
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.remove('text-slate-500');
+                    link.classList.add('font-bold', 'translate-x-1', 'transform', 'transition-all', 'duration-300');
+                    
+                    // Color coordinate based on location (Teal for Jeju, Blossom for Seoul)
+                    if (['day-4', 'day-5', 'day-6', 'day-7'].includes(current)) {
+                        link.classList.add('text-teal-600');
+                    } else {
+                        link.classList.add('text-blossom-600');
+                    }
+                }
+            });
+        });
+
+        // Trigger once on load to catch the initial scroll position
+        window.dispatchEvent(new Event('scroll'));
     </script>
 </body>
 </html>
