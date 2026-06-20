@@ -37,7 +37,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-blossom-200 selection:text-blossom-900">
 
-    <!-- Mobile Sticky Navigation (Hidden on Desktop) -->
+    <!-- Mobile Sticky Navigation -->
     <nav class="md:hidden fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="px-4 h-14 flex items-center justify-between">
             <div class="flex items-center gap-2">
@@ -45,7 +45,6 @@
                 <h1 class="font-bold text-slate-800 text-lg">South Korea '27</h1>
             </div>
         </div>
-        <!-- Tab Navigation -->
         <div class="px-4 pb-0 overflow-x-auto hide-scrollbar flex gap-6 text-sm font-semibold text-slate-500" id="mobile-nav-container">
             <a href="#seoul-1" id="nav-seoul-1" class="nav-link pb-3 border-b-2 border-transparent hover:text-slate-800 whitespace-nowrap transition-colors">Seoul (Pt 1)</a>
             <a href="#jeju" id="nav-jeju" class="nav-link pb-3 border-b-2 border-transparent hover:text-slate-800 whitespace-nowrap transition-colors">Jeju (Pt 2)</a>
@@ -55,7 +54,7 @@
 
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row relative">
         
-        <!-- Desktop Sidebar Navigation (Hidden on Mobile) -->
+        <!-- Desktop Sidebar Navigation -->
         <aside class="hidden md:block w-64 lg:w-72 shrink-0 sticky top-0 h-screen overflow-y-auto py-12 px-6 border-r border-slate-200 bg-slate-50/50 hide-scrollbar">
             <div class="flex items-center gap-2 mb-10">
                 <i data-lucide="map" class="text-blossom-500 w-6 h-6"></i>
@@ -99,12 +98,10 @@
         <!-- Main Content Area -->
         <main class="flex-1 max-w-3xl px-4 md:px-8 pb-20 mt-28 md:mt-0 pt-0 md:pt-12 space-y-10">
 
-            <!-- Header / Overview (Compact) -->
+            <!-- Overview -->
             <header id="overview" class="scroll-mt-32 section-observer">
-                <span class="inline-block py-1 px-3 rounded-full bg-blossom-100 text-blossom-600 text-xs font-bold uppercase tracking-wider mb-3">Spring Break 2027</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3 tracking-tight">Chasing Cherry Blossoms</h2>
-                
-                <div class="flex flex-wrap gap-2 mb-6">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">South Korea '27</h2>
+                <div class="flex flex-wrap gap-2 mt-4">
                     <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-medium text-slate-700 shadow-sm">
                         <i data-lucide="calendar" class="w-4 h-4 text-blossom-500"></i> 26 Mar - 07 Apr
                     </span>
@@ -112,468 +109,227 @@
                         <i data-lucide="map-pin" class="w-4 h-4 text-blossom-500"></i> Seoul & Jeju
                     </span>
                 </div>
-
-                <!-- Action Needed Alert -->
-                <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-xl flex gap-3 shadow-sm">
+                <div class="mt-6 bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-xl flex gap-3 shadow-sm">
                     <i data-lucide="info" class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5"></i>
-                    <div>
-                        <h3 class="font-bold text-amber-800 text-sm">To-Do List</h3>
-                        <p class="text-sm text-amber-700 mt-1">Don't forget to book domestic flights from <a href="https://maps.google.com/?q=Gimpo+International+Airport" target="_blank" class="font-bold border-b border-dashed border-amber-400 hover:text-amber-900 transition-colors">Seoul Gimpo (GMP)</a> to <a href="https://maps.google.com/?q=Jeju+International+Airport" target="_blank" class="font-bold border-b border-dashed border-amber-400 hover:text-amber-900 transition-colors">Jeju (CJU)</a> for Mar 29, and return for Apr 2. Also, secure a rental car in Jeju!</p>
-                    </div>
+                    <p class="text-sm text-amber-700">Don't forget to book domestic flights from <a href="https://maps.google.com/?q=Gimpo+International+Airport" target="_blank" class="font-bold border-b border-dashed border-amber-400 hover:text-amber-900 transition-colors">Gimpo (GMP)</a> to <a href="https://maps.google.com/?q=Jeju+International+Airport" target="_blank" class="font-bold border-b border-dashed border-amber-400 hover:text-amber-900 transition-colors">Jeju (CJU)</a> for Mar 29, and return for Apr 2.</p>
                 </div>
             </header>
 
-            <!-- Itinerary: Seoul Part 1 -->
+            <!-- Seoul Pt 1 -->
             <section id="seoul-1" class="scroll-mt-28 section-observer pt-4">
                 <div class="mb-6">
                     <span class="text-blossom-600 font-bold tracking-wider uppercase text-xs">Part 1</span>
                     <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Hello, Seoul!</h2>
                 </div>
-
                 <div class="space-y-6">
-                    <!-- Day 1 -->
                     <div id="day-1" class="scroll-mt-28 group day-observer">
                         <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
                             <div class="mb-1 text-blossom-600 font-bold text-sm tracking-wide">Fri, 26 Mar</div>
-                            <h3 class="font-bold text-xl text-slate-800 mb-4">Arrival in Seoul</h3>
-                            <ul class="space-y-4">
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="plane-landing" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>3:40 PM:</strong> Arrive at <a href="https://maps.google.com/?q=Incheon+International+Airport" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Incheon (ICN)</a>. Clear customs, pick up your pre-booked eSIM/portable Wi-Fi, and load cash onto T-Money transit cards at the convenience store. Take the AREX express train to <a href="https://maps.google.com/?q=Seoul+Station" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Seoul Station</a>.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="hotel" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>5:30 PM:</strong> Check into your hotel. Freshen up after the long journey.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="utensils" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>7:00 PM:</strong> Welcome dinner! Grab authentic Korean BBQ in <a href="https://maps.google.com/?q=Myeongdong+Seoul" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Myeongdong</a>, or try the Michelin-recognized garlic dumplings at Myeongdong Kyoja. Afterwards, stroll the Myeongdong Night Market for street food snacks (hotteok, cheese lobster, and egg bread!).</span>
-                                </li>
+                            <h3 class="font-bold text-xl text-slate-800 mb-4">Arrival</h3>
+                            <ul class="space-y-4 text-sm text-slate-700">
+                                <li><i data-lucide="plane-landing" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>3:40 PM:</strong> Arrive at <a href="https://maps.google.com/?q=Incheon+International+Airport" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500">Incheon (ICN)</a>.</li>
+                                <li><i data-lucide="hotel" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>5:30 PM:</strong> Check-in.</li>
+                                <li><i data-lucide="utensils" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>7:00 PM:</strong> K-BBQ dinner in <a href="https://maps.google.com/?q=Myeongdong+Seoul" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500">Myeongdong</a>.</li>
                             </ul>
                         </div>
                     </div>
-
-                    <!-- Day 2 -->
                     <div id="day-2" class="scroll-mt-28 group day-observer">
                         <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
                             <div class="mb-1 text-blossom-600 font-bold text-sm tracking-wide">Sat, 27 Mar</div>
-                            <h3 class="font-bold text-xl text-slate-800 mb-4">Palaces & Traditions</h3>
-                            <ul class="space-y-4">
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="camera" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>9:30 AM:</strong> <a href="https://maps.google.com/?q=Gyeongbokgung+Palace" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Gyeongbokgung Palace</a>. Rent a Hanbok nearby for free entry and amazing photos around the pavilions. Catch the Royal Guard Changing Ceremony.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="map" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>2:00 PM:</strong> Stroll through <a href="https://maps.google.com/?q=Bukchon+Hanok+Village" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Bukchon Hanok Village</a> (remember to keep voices low) and <a href="https://maps.google.com/?q=Insadong+Seoul" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Insadong</a> for traditional tea and crafts.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="coffee" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>4:30 PM:</strong> Rest your feet at <a href="https://maps.google.com/?q=Ikseon-dong+Hanok+Village" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Ikseon-dong Hanok Village</a>. This maze of narrow alleys is packed with Seoul's trendiest aesthetic cafes, craft breweries, and artisan boutiques.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="utensils" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>7:00 PM:</strong> Dinner at <a href="https://maps.google.com/?q=Gwangjang+Market" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Gwangjang Market</a>. Grab a stool and try Bindaetteok (mung bean pancakes), Mayak Gimbap, and fresh dumplings.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="footprints" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>8:30 PM:</strong> Walk off dinner with a peaceful evening stroll along the beautifully illuminated <a href="https://maps.google.com/?q=Cheonggyecheon+Stream" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Cheonggyecheon Stream</a>, located just a short walk from the market.</span>
-                                </li>
+                            <h3 class="font-bold text-xl text-slate-800 mb-4">Palaces</h3>
+                            <ul class="space-y-4 text-sm text-slate-700">
+                                <li><i data-lucide="camera" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>9:30 AM:</strong> <a href="https://maps.google.com/?q=Gyeongbokgung+Palace" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500">Gyeongbokgung Palace</a> (Hanbok rental recommended).</li>
+                                <li><i data-lucide="map" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>2:00 PM:</strong> <a href="https://maps.google.com/?q=Bukchon+Hanok+Village" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500">Bukchon Hanok Village</a> & <a href="https://maps.google.com/?q=Insadong+Seoul" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500">Insadong</a>.</li>
+                                <li><i data-lucide="utensils" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>7:00 PM:</strong> <a href="https://maps.google.com/?q=Gwangjang+Market" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500">Gwangjang Market</a> food tour.</li>
                             </ul>
                         </div>
                     </div>
-
-                    <!-- Day 3 -->
                     <div id="day-3" class="scroll-mt-28 group day-observer">
                         <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
                             <div class="mb-1 text-blossom-600 font-bold text-sm tracking-wide">Sun, 28 Mar</div>
-                            <h3 class="font-bold text-xl text-slate-800 mb-4">Views & Culture</h3>
-                            <ul class="space-y-4">
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="landmark" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>10:00 AM:</strong> Visit the spectacular <a href="https://maps.google.com/?q=National+Museum+of+Korea" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">National Museum of Korea</a>. The architecture is stunning. Don't miss the picturesque <a href="https://maps.google.com/?q=Yongsan+Family+Park" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Yongsan Family Park</a> right next door.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="shopping-bag" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>1:30 PM:</strong> Head up to the <a href="https://maps.google.com/?q=Itaewon+Seoul" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Itaewon</a> / Hannam-dong area. This is a great spot for international cuisine, followed by browsing trendy Korean flagship streetwear brands like Mardi Mercredi.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="mountain" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>5:00 PM:</strong> Sunset at <a href="https://maps.google.com/?q=N+Seoul+Tower" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">N Seoul Tower</a> via the Namsan Cable Car. Look out for early spring blooms in Namsan Park! For dinner, try the famous "Namsan Tonkatsu" (giant pork cutlet) near the cable car station.</span>
-                                </li>
+                            <h3 class="font-bold text-xl text-slate-800 mb-4">Culture</h3>
+                            <ul class="space-y-4 text-sm text-slate-700">
+                                <li><i data-lucide="landmark" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>10:00 AM:</strong> <a href="https://maps.google.com/?q=National+Museum+of+Korea" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500">National Museum of Korea</a>.</li>
+                                <li><i data-lucide="shopping-bag" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>1:30 PM:</strong> <a href="https://maps.google.com/?q=Itaewon+Seoul" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500">Itaewon</a> / <a href="https://maps.google.com/?q=Hannam-dong" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500">Hannam-dong</a> shopping.</li>
+                                <li><i data-lucide="mountain" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>5:00 PM:</strong> Sunset at <a href="https://maps.google.com/?q=N+Seoul+Tower" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500">N Seoul Tower</a>.</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Itinerary: Jeju Island -->
+            <!-- Jeju -->
             <section id="jeju" class="scroll-mt-28 section-observer pt-4">
-                <div class="mb-6 p-5 bg-gradient-to-r from-teal-50 to-emerald-50 rounded-2xl border border-teal-100">
+                <div class="mb-6">
                     <span class="text-teal-600 font-bold tracking-wider uppercase text-xs">Part 2</span>
                     <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Jeju Island</h2>
-                    <p class="text-slate-600 mt-1 text-sm">Fly south for volcanic landscapes, coastal drives, and peak Jeju Cherry Blossoms.</p>
                 </div>
-
                 <div class="space-y-6">
-                    <!-- Day 4 -->
                     <div id="day-4" class="scroll-mt-28 group day-observer">
                         <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
                             <div class="mb-1 text-teal-600 font-bold text-sm tracking-wide">Mon, 29 Mar</div>
                             <h3 class="font-bold text-xl text-slate-800 mb-4">Hello, Jeju!</h3>
-                            <ul class="space-y-4">
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="plane" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>Morning:</strong> Fly from <a href="https://maps.google.com/?q=Gimpo+International+Airport" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500 hover:text-teal-600 transition-colors">Seoul Gimpo (GMP)</a> to <a href="https://maps.google.com/?q=Jeju+International+Airport" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500 hover:text-teal-600 transition-colors">Jeju (CJU)</a> and pick up your pre-booked rental car.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="flower-2" class="w-5 h-5 mt-0.5 text-blossom-500 shrink-0"></i>
-                                    <span><strong>11:30 AM:</strong> Drive through <a href="https://maps.google.com/?q=Jeonnong-ro+Jeju" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500 hover:text-teal-600 transition-colors">Jeonnong-ro Cherry Blossom Street</a>. Late March is peak bloom in Jeju, and this is the most famous spot!</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="waves" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>2:00 PM:</strong> Walk the <a href="https://maps.google.com/?q=Aewol+Handam+Coastal+Trail" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500 hover:text-teal-600 transition-colors">Aewol Handam Coastal Trail</a>. Grab a coastal coffee at Cafe Knotted. If time permits, drive 20 mins down to <a href="https://maps.google.com/?q=Hyeopjae+Beach" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500 hover:text-teal-600 transition-colors">Hyeopjae Beach</a> for striking emerald waters and white sand.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="utensils" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>7:00 PM:</strong> Head to <a href="https://maps.google.com/?q=Dongmun+Night+Market" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500 hover:text-teal-600 transition-colors">Dongmun Night Market</a>. The vibe is electric with fire-torched street food, abalone kimbap, and fresh citrus juices.</span>
-                                </li>
+                            <ul class="space-y-4 text-sm text-slate-700">
+                                <li><i data-lucide="plane" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>Morning:</strong> Flight <a href="https://maps.google.com/?q=Gimpo+International+Airport" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500">GMP</a> to <a href="https://maps.google.com/?q=Jeju+International+Airport" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500">CJU</a>.</li>
+                                <li><i data-lucide="flower-2" class="w-4 h-4 inline mr-2 text-blossom-500"></i><strong>11:30 AM:</strong> <a href="https://maps.google.com/?q=Jeonnong-ro+Jeju" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500">Jeonnong-ro</a> blossoms.</li>
+                                <li><i data-lucide="waves" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>2:00 PM:</strong> <a href="https://maps.google.com/?q=Aewol+Handam+Coastal+Trail" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500">Aewol Coastal Trail</a>.</li>
                             </ul>
                         </div>
                     </div>
-
-                    <!-- Day 5 -->
                     <div id="day-5" class="scroll-mt-28 group day-observer">
                         <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
                             <div class="mb-1 text-teal-600 font-bold text-sm tracking-wide">Tue, 30 Mar</div>
-                            <h3 class="font-bold text-xl text-slate-800 mb-4">West & South Wonders</h3>
-                            <ul class="space-y-4">
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="leaf" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>9:30 AM:</strong> Visit <a href="https://maps.google.com/?q=Osulloc+Tea+Museum" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500 hover:text-teal-600 transition-colors">Osulloc Tea Museum</a> & Innisfree Jeju House. Enjoy matcha green tea rolls and views of the sprawling tea fields.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="mountain" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>12:00 PM:</strong> See <a href="https://maps.google.com/?q=Sanbangsan+Mountain" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500 hover:text-teal-600 transition-colors">Sanbangsan Mountain</a>, surrounded by bright yellow canola flowers. If the tide is low, take the stunning walk along the <a href="https://maps.google.com/?q=Yongmeori+Coast" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500 hover:text-teal-600 transition-colors">Yongmeori Coast</a> at the mountain's base.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="droplets" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>4:00 PM:</strong> View <a href="https://maps.google.com/?q=Cheonjiyeon+Waterfall" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500 hover:text-teal-600 transition-colors">Cheonjiyeon Waterfall</a> in Seogwipo. Afterwards, grab an early dinner at the <a href="https://maps.google.com/?q=Seogwipo+Maeil+Olle+Market" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500 hover:text-teal-600 transition-colors">Seogwipo Maeil Olle Market</a> (famous for garlic fried chicken).</span>
-                                </li>
+                            <h3 class="font-bold text-xl text-slate-800 mb-4">West & South</h3>
+                            <ul class="space-y-4 text-sm text-slate-700">
+                                <li><i data-lucide="leaf" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>9:30 AM:</strong> <a href="https://maps.google.com/?q=Osulloc+Tea+Museum" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500">Osulloc Tea Museum</a>.</li>
+                                <li><i data-lucide="mountain" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>12:00 PM:</strong> <a href="https://maps.google.com/?q=Sanbangsan+Mountain" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500">Sanbangsan</a> & <a href="https://maps.google.com/?q=Yongmeori+Coast" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500">Yongmeori Coast</a>.</li>
+                                <li><i data-lucide="droplets" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>4:00 PM:</strong> <a href="https://maps.google.com/?q=Cheonjiyeon+Waterfall" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500">Cheonjiyeon Waterfall</a>.</li>
                             </ul>
                         </div>
                     </div>
-
-                    <!-- Day 6 -->
                     <div id="day-6" class="scroll-mt-28 group day-observer">
                         <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
                             <div class="mb-1 text-teal-600 font-bold text-sm tracking-wide">Wed, 31 Mar</div>
-                            <h3 class="font-bold text-xl text-slate-800 mb-4">Sunrise Peak & East Coast</h3>
-                            <ul class="space-y-4">
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="sun" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>9:00 AM:</strong> Hike <a href="https://maps.google.com/?q=Seongsan+Ilchulbong" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500 hover:text-teal-600 transition-colors">Seongsan Ilchulbong</a> (Sunrise Peak) for volcanic crater views. It's a short but steep stair climb!</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="eye" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>11:30 AM:</strong> Watch the famous Haenyeo (Women Divers) demonstration at the base of the peak.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="map" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>2:30 PM:</strong> Walk the stunning <a href="https://maps.google.com/?q=Seopjikoji" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500 hover:text-teal-600 transition-colors">Seopjikoji</a> coastal trails. Right next door is <a href="https://maps.google.com/?q=Aqua+Planet+Jeju" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500 hover:text-teal-600 transition-colors">Aqua Planet Jeju</a>, Asia's largest aquarium, perfect for a late afternoon visit.</span>
-                                </li>
+                            <h3 class="font-bold text-xl text-slate-800 mb-4">Sunrise Peak</h3>
+                            <ul class="space-y-4 text-sm text-slate-700">
+                                <li><i data-lucide="sun" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>9:00 AM:</strong> <a href="https://maps.google.com/?q=Seongsan+Ilchulbong" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500">Seongsan Ilchulbong</a>.</li>
+                                <li><i data-lucide="eye" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>11:30 AM:</strong> Haenyeo Divers.</li>
+                                <li><i data-lucide="map" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>2:30 PM:</strong> <a href="https://maps.google.com/?q=Seopjikoji" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500">Seopjikoji</a> trails.</li>
                             </ul>
                         </div>
                     </div>
-
-                    <!-- Day 7 -->
                     <div id="day-7" class="scroll-mt-28 group day-observer">
                         <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
                             <div class="mb-1 text-teal-600 font-bold text-sm tracking-wide">Thu, 01 Apr</div>
-                            <h3 class="font-bold text-xl text-slate-800 mb-4">Udo Island Getaway</h3>
-                            <ul class="space-y-4">
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="ship" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>9:00 AM:</strong> Take the short 15-minute ferry from <a href="https://maps.google.com/?q=Seongsan+Port" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500 hover:text-teal-600 transition-colors">Seongsan Port</a> to <a href="https://maps.google.com/?q=Udo+Island" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500 hover:text-teal-600 transition-colors">Udo Island</a>.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="bike" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>10:30 AM:</strong> Rent electric bikes to circumnavigate the island. Stop at Hagosudong Beach, see the unique popcorn-shaped sand at <a href="https://maps.google.com/?q=Seobin+Baeksa+Beach" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500 hover:text-teal-600 transition-colors">Seobin Baeksa</a>, and try the famous Udo Peanut Ice Cream!</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="utensils" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>7:00 PM:</strong> Back on Jeju, treat yourselves to authentic Jeju Black Pork BBQ for dinner. A famous spot is <a href="https://maps.google.com/?q=Black+Pork+Street+Jeju" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500 hover:text-teal-600 transition-colors">Black Pork Street</a> in Jeju City.</span>
-                                </li>
+                            <h3 class="font-bold text-xl text-slate-800 mb-4">Udo Island</h3>
+                            <ul class="space-y-4 text-sm text-slate-700">
+                                <li><i data-lucide="ship" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>9:00 AM:</strong> Ferry from <a href="https://maps.google.com/?q=Seongsan+Port" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500">Seongsan Port</a> to <a href="https://maps.google.com/?q=Udo+Island" target="_blank" class="border-b border-dashed border-slate-300 hover:border-teal-500">Udo</a>.</li>
+                                <li><i data-lucide="bike" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>10:30 AM:</strong> Bike loop, Udo peanut ice cream.</li>
+                                <li><i data-lucide="utensils" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>7:00 PM:</strong> Jeju Black Pork dinner.</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Itinerary: Seoul Part 2 -->
+            <!-- Seoul Pt 2 -->
             <section id="seoul-2" class="scroll-mt-28 section-observer pt-4">
                 <div class="mb-6">
                     <span class="text-blossom-600 font-bold tracking-wider uppercase text-xs">Part 3</span>
                     <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Seoul in Full Bloom</h2>
-                    <p class="text-slate-500 mt-1 text-sm">Return to the capital just in time for the spectacular cherry blossom peak.</p>
                 </div>
-
                 <div class="space-y-6">
-                    <!-- Day 8 -->
                     <div id="day-8" class="scroll-mt-28 group day-observer">
                         <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
                             <div class="mb-1 text-blossom-600 font-bold text-sm tracking-wide">Fri, 02 Apr</div>
-                            <h3 class="font-bold text-xl text-slate-800 mb-4">Return to the Capital</h3>
-                            <ul class="space-y-4">
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="shopping-bag" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>9:00 AM:</strong> <a href="https://maps.google.com/?q=Dongmun+Traditional+Market" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Dongmun Market</a> in Jeju for souvenirs (Hallabong orange chocolates and matcha goods).</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="plane-takeoff" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>Midday:</strong> Fly from Jeju (CJU) back to Seoul Gimpo (GMP).</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="building" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>4:00 PM:</strong> Check into Seoul hotel. Visit <a href="https://maps.google.com/?q=Starfield+COEX+Mall" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Starfield COEX Mall</a> & the iconic Starfield Library in Gangnam. Find peace at the historic <a href="https://maps.google.com/?q=Bongeunsa+Temple" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Bongeunsa Temple</a> across the street.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="utensils" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>7:30 PM:</strong> Head down the road to the <a href="https://maps.google.com/?q=Gangnam+Station" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Gangnam Station area</a>. The streets behind the station are packed with bustling BBQ joints, pubs, and cafes.</span>
-                                </li>
+                            <h3 class="font-bold text-xl text-slate-800 mb-4">Return</h3>
+                            <ul class="space-y-4 text-sm text-slate-700">
+                                <li><i data-lucide="shopping-bag" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>9:00 AM:</strong> <a href="https://maps.google.com/?q=Dongmun+Traditional+Market" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500">Dongmun Market</a>.</li>
+                                <li><i data-lucide="plane-takeoff" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>Midday:</strong> Fly CJU to GMP.</li>
+                                <li><i data-lucide="building" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>4:00 PM:</strong> <a href="https://maps.google.com/?q=Starfield+COEX+Mall" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500">COEX Mall</a> & <a href="https://maps.google.com/?q=Bongeunsa+Temple" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500">Bongeunsa</a>.</li>
                             </ul>
                         </div>
                     </div>
-
-                    <!-- Day 9 -->
                     <div id="day-9" class="scroll-mt-28 group day-observer">
-                        <div class="bg-blossom-50 p-5 rounded-2xl shadow-sm border border-blossom-200 hover:shadow-md transition-shadow">
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
                             <div class="mb-1 text-blossom-600 font-bold text-sm tracking-wide">Sat, 03 Apr</div>
-                            <h3 class="font-bold text-xl text-slate-800 mb-4">Cherry Blossom Festival</h3>
-                            <ul class="space-y-4">
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="flower-2" class="w-5 h-5 mt-0.5 text-blossom-500 shrink-0"></i>
-                                    <span><strong>10:00 AM:</strong> <a href="https://maps.google.com/?q=Yeouido+Hangang+Park" target="_blank" class="border-b border-dashed border-blossom-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Yeouido Hangang Park</a>. Walk the famous Yunjung-ro cherry blossom tunnels alongside thousands of locals!</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="pizza" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>12:30 PM:</strong> Picnic by the Han River. Order 'Chimaek' (fried chicken and beer) delivery right to your picnic mat.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="shopping-bag" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>2:30 PM:</strong> Walk over to <a href="https://maps.google.com/?q=The+Hyundai+Seoul" target="_blank" class="border-b border-dashed border-blossom-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">The Hyundai Seoul</a>, a spectacular department store featuring a massive indoor botanical garden and premium pop-ups.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="music" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>6:00 PM:</strong> Explore <a href="https://maps.google.com/?q=Hongdae+Seoul" target="_blank" class="border-b border-dashed border-blossom-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Hongdae</a> for youthful energy, incredible K-pop street buskers, vintage shopping, and endless dinner options.</span>
-                                </li>
+                            <h3 class="font-bold text-xl text-slate-800 mb-4">Blossoms</h3>
+                            <ul class="space-y-4 text-sm text-slate-700">
+                                <li><i data-lucide="flower-2" class="w-4 h-4 inline mr-2 text-blossom-500"></i><strong>10:00 AM:</strong> <a href="https://maps.google.com/?q=Yeouido+Hangang+Park" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500">Yeouido</a> blossoms.</li>
+                                <li><i data-lucide="pizza" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>12:30 PM:</strong> Han River picnic.</li>
+                                <li><i data-lucide="music" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>6:00 PM:</strong> <a href="https://maps.google.com/?q=Hongdae+Seoul" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500">Hongdae</a> nightlife.</li>
                             </ul>
                         </div>
                     </div>
-
-                    <!-- Day 10 -->
                     <div id="day-10" class="scroll-mt-28 group day-observer">
                         <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
                             <div class="mb-1 text-blossom-600 font-bold text-sm tracking-wide">Sun, 04 Apr</div>
-                            <h3 class="font-bold text-xl text-slate-800 mb-4">Lake Blooms & City Views</h3>
-                            <ul class="space-y-4">
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="flower-2" class="w-5 h-5 mt-0.5 text-blossom-500 shrink-0"></i>
-                                    <span><strong>10:00 AM:</strong> <a href="https://maps.google.com/?q=Seokchon+Lake" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Seokchon Lake Park</a>. The lake is entirely surrounded by blooming cherry trees creating a massive pink ring.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="building" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>1:00 PM:</strong> Browse the luxury shops and grab lunch at the <a href="https://maps.google.com/?q=Lotte+World+Mall" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Lotte World Mall</a>, then head up to the <a href="https://maps.google.com/?q=Seoul+Sky+Observatory" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Seoul Sky Observatory</a> for 360-degree panoramas of the sprawling city.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="tree-pine" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>4:30 PM:</strong> Take a short taxi ride to the vast <a href="https://maps.google.com/?q=Olympic+Park+Seoul" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Olympic Park</a>. Rent a quad-bike to explore the art installations and visit the famous 'Lone Tree'.</span>
-                                </li>
+                            <h3 class="font-bold text-xl text-slate-800 mb-4">Lakes</h3>
+                            <ul class="space-y-4 text-sm text-slate-700">
+                                <li><i data-lucide="flower-2" class="w-4 h-4 inline mr-2 text-blossom-500"></i><strong>10:00 AM:</strong> <a href="https://maps.google.com/?q=Seokchon+Lake" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500">Seokchon Lake</a>.</li>
+                                <li><i data-lucide="building" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>1:00 PM:</strong> <a href="https://maps.google.com/?q=Seoul+Sky+Observatory" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500">Seoul Sky</a>.</li>
                             </ul>
                         </div>
                     </div>
-
-                    <!-- Day 11 -->
                     <div id="day-11" class="scroll-mt-28 group day-observer">
                         <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
                             <div class="mb-1 text-blossom-600 font-bold text-sm tracking-wide">Mon, 05 Apr</div>
-                            <h3 class="font-bold text-xl text-slate-800 mb-4">Trendy Cafes & Design</h3>
-                            <ul class="space-y-4">
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="tree-deciduous" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>10:00 AM:</strong> <a href="https://maps.google.com/?q=Seoul+Forest" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Seoul Forest Park</a>. Enjoy blossoms, vibrant tulip fields, and feeding the deer.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="coffee" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>1:00 PM:</strong> Walk over to <a href="https://maps.google.com/?q=Seongsu-dong" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Seongsu-dong</a> (the "Brooklyn of Seoul"). Famous for industrial-chic cafes like Onion and Daelim Changgo. Don't miss the Dior flagship popup.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="brush" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>4:00 PM:</strong> <a href="https://maps.google.com/?q=Dongdaemun+Design+Plaza" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Dongdaemun Design Plaza (DDP)</a> for futuristic architecture by Zaha Hadid. Great at sunset!</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="utensils" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>7:00 PM:</strong> For a unique dinner, head a few blocks over to <a href="https://maps.google.com/?q=Sindang-dong+Tteokbokki+Town" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Sindang-dong Tteokbokki Town</a>. Order a massive pot of customized spicy rice cakes cooked right at your table.</span>
-                                </li>
+                            <h3 class="font-bold text-xl text-slate-800 mb-4">Cafes</h3>
+                            <ul class="space-y-4 text-sm text-slate-700">
+                                <li><i data-lucide="tree-deciduous" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>10:00 AM:</strong> <a href="https://maps.google.com/?q=Seoul+Forest" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500">Seoul Forest</a>.</li>
+                                <li><i data-lucide="coffee" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>1:00 PM:</strong> <a href="https://maps.google.com/?q=Seongsu-dong" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500">Seongsu-dong</a> cafes.</li>
+                                <li><i data-lucide="brush" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>4:00 PM:</strong> <a href="https://maps.google.com/?q=Dongdaemun+Design+Plaza" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500">DDP</a>.</li>
                             </ul>
                         </div>
                     </div>
-
-                    <!-- Day 12 -->
                     <div id="day-12" class="scroll-mt-28 group day-observer">
                         <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
                             <div class="mb-1 text-blossom-600 font-bold text-sm tracking-wide">Tue, 06 Apr</div>
-                            <h3 class="font-bold text-xl text-slate-800 mb-4">Last Minute Shopping</h3>
-                            <ul class="space-y-4">
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="shopping-cart" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>Morning:</strong> Free time. Optional: book a half-day tour to the <a href="https://maps.google.com/?q=DMZ+South+Korea" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">DMZ (Demilitarized Zone)</a>.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="gift" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>2:00 PM:</strong> Final shopping run in Myeongdong. Hit the massive Olive Young flagship store for K-beauty skincare hauls, or <a href="https://maps.google.com/?q=Namdaemun+Market" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Namdaemun Market</a> for cheaper, traditional goods and souvenirs.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="utensils" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>7:00 PM:</strong> Farewell Dinner! For the ultimate beef experience, head to the <a href="https://maps.google.com/?q=Majang+Meat+Market" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500 hover:text-blossom-600 transition-colors">Majang Meat Market</a>. Buy premium Hanwoo beef directly from the butchers and grill it at the restaurants upstairs.</span>
-                                </li>
+                            <h3 class="font-bold text-xl text-slate-800 mb-4">Shopping</h3>
+                            <ul class="space-y-4 text-sm text-slate-700">
+                                <li><i data-lucide="shopping-cart" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>2:00 PM:</strong> <a href="https://maps.google.com/?q=Myeongdong+Seoul" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500">Myeongdong</a> or <a href="https://maps.google.com/?q=Namdaemun+Market" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500">Namdaemun</a>.</li>
+                                <li><i data-lucide="utensils" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>7:00 PM:</strong> <a href="https://maps.google.com/?q=Majang+Meat+Market" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500">Majang Meat Market</a>.</li>
                             </ul>
                         </div>
                     </div>
-
-                    <!-- Day 13 -->
                     <div id="day-13" class="scroll-mt-28 group day-observer">
-                        <div class="bg-slate-100 p-5 rounded-2xl shadow-sm border border-slate-200 transition-shadow opacity-90">
-                            <div class="mb-1 text-slate-500 font-bold text-sm tracking-wide">Wed, 07 Apr</div>
-                            <h3 class="font-bold text-xl text-slate-800 mb-4">Departure</h3>
-                            <ul class="space-y-4">
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="train" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>7:30 AM:</strong> Head to <a href="https://maps.google.com/?q=Incheon+International+Airport" target="_blank" class="border-b border-dashed border-slate-300 hover:border-slate-500 hover:text-slate-600 transition-colors">Incheon International Airport (ICN)</a> via the AREX train or airport limousine bus.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="shopping-bag" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>9:00 AM:</strong> ICN has world-class duty-free shopping and excellent food courts. Grab a final bowl of Bibimbap or a pastry from Paris Baguette before heading to your gate.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <i data-lucide="plane-takeoff" class="w-5 h-5 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span><strong>11:05 AM:</strong> Flight departs for Singapore. Have a safe trip back to Perth!</span>
-                                </li>
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                            <div class="mb-1 text-blossom-600 font-bold text-sm tracking-wide">Wed, 07 Apr</div>
+                            <h3 class="font-bold text-xl text-slate-800 mb-4">Depart</h3>
+                            <ul class="space-y-4 text-sm text-slate-700">
+                                <li><i data-lucide="train" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>7:30 AM:</strong> AREX to <a href="https://maps.google.com/?q=Incheon+International+Airport" target="_blank" class="border-b border-dashed border-slate-300 hover:border-blossom-500">ICN</a>.</li>
+                                <li><i data-lucide="plane-takeoff" class="w-4 h-4 inline mr-2 text-slate-400"></i><strong>11:05 AM:</strong> Fly home.</li>
                             </ul>
                         </div>
                     </div>
-
                 </div>
             </section>
         </main>
     </div>
 
     <script>
-        // Initialize Icons
         lucide.createIcons();
-
-        // Scroll Spy Functionality
         document.addEventListener('DOMContentLoaded', () => {
-            
-            // --- 1. Update Top/Main Navigation (Sections) ---
             const sections = document.querySelectorAll('.section-observer');
-            const navContainer = document.getElementById('mobile-nav-container');
-            
-            const observerOptions = {
-                root: null,
-                rootMargin: '-20% 0px -80% 0px', 
-                threshold: 0
-            };
+            const daySections = document.querySelectorAll('.day-observer');
+            const observerOptions = { root: null, rootMargin: '-20% 0px -60% 0px', threshold: 0 };
 
-            const observerCallback = (entries) => {
+            const sectionObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const id = entry.target.id;
-                        
-                        // Handle Top/Mobile Nav
                         document.querySelectorAll('.nav-link').forEach(link => {
-                            link.classList.remove('border-blossom-500', 'text-slate-800', 'border-teal-500');
-                            link.classList.add('border-transparent', 'text-slate-500');
+                            link.classList.remove('text-slate-800', 'border-blossom-500', 'border-teal-500');
+                            link.classList.add('text-slate-500', 'border-transparent');
                         });
-                        
-                        const activeMobileLink = document.getElementById(`nav-${id}`);
-                        if(activeMobileLink) {
-                            activeMobileLink.classList.remove('border-transparent', 'text-slate-500');
-                            activeMobileLink.classList.add('text-slate-800');
-                            if (id === 'jeju') {
-                                activeMobileLink.classList.add('border-teal-500');
-                            } else {
-                                activeMobileLink.classList.add('border-blossom-500');
-                            }
-                            
-                            // Center the active link in the mobile scrollable nav
-                            if (window.innerWidth < 768) {
-                                const navContainer = document.getElementById('mobile-nav-container');
-                                const linkRect = activeMobileLink.getBoundingClientRect();
-                                const containerRect = navContainer.getBoundingClientRect();
-                                const scrollLeft = activeMobileLink.offsetLeft - (containerRect.width / 2) + (linkRect.width / 2);
-                                navContainer.scrollTo({ left: scrollLeft, behavior: 'smooth' });
-                            }
-                        }
-
-                        // Handle Desktop Top-Level Links
-                        const activeDesktopLink = document.getElementById(`nav-desktop-${id}`);
-                        if(activeDesktopLink) {
-                            activeDesktopLink.classList.remove('text-slate-500');
-                            if (id === 'jeju') {
-                                activeDesktopLink.classList.add('text-teal-600');
-                            } else {
-                                activeDesktopLink.classList.add('text-blossom-600');
-                            }
+                        const active = document.getElementById(`nav-${id}`);
+                        if(active) {
+                            active.classList.replace('text-slate-500', 'text-slate-800');
+                            active.classList.replace('border-transparent', id === 'jeju' ? 'border-teal-500' : 'border-blossom-500');
                         }
                     }
                 });
-            };
+            }, { rootMargin: '-20% 0px -70% 0px' });
 
-            // Initialize and observe sections
-            const observer = new IntersectionObserver(observerCallback, observerOptions);
-            sections.forEach(section => observer.observe(section));
-
-
-            // --- 2. Update Day Level Navigation (Sidebar) ---
-            const daySections = document.querySelectorAll('.day-observer');
-            const dayObserverOptions = {
-                root: null,
-                rootMargin: '-20% 0px -60% 0px', // Trigger when day is around the top 20% to 40% of the screen
-                threshold: 0
-            };
-
-            const dayObserverCallback = (entries) => {
+            const dayObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const id = entry.target.id;
-                        
-                        // Remove active class from all day links
                         document.querySelectorAll('.day-nav-link').forEach(link => {
                             link.classList.remove('font-bold', 'text-blossom-600', 'text-teal-600');
                             link.classList.add('text-slate-400');
                         });
-                        
-                        // Add active class to current day link
-                        const activeDayLink = document.getElementById(`nav-${id}`);
-                        if(activeDayLink) {
-                            activeDayLink.classList.remove('text-slate-400');
-                            activeDayLink.classList.add('font-bold');
-                            
-                            // Use teal color for Jeju days (4-7), blossom for the rest
-                            if (['day-4', 'day-5', 'day-6', 'day-7'].includes(id)) {
-                                activeDayLink.classList.add('text-teal-600');
-                            } else {
-                                activeDayLink.classList.add('text-blossom-600');
-                            }
+                        const active = document.getElementById(`nav-${id}`);
+                        if(active) {
+                            active.classList.replace('text-slate-400', ['day-4', 'day-5', 'day-6', 'day-7'].includes(id) ? 'text-teal-600' : 'text-blossom-600');
+                            active.classList.add('font-bold');
                         }
                     }
                 });
-            };
+            }, observerOptions);
 
-            // Initialize and observe days
-            const dayObserver = new IntersectionObserver(dayObserverCallback, dayObserverOptions);
-            daySections.forEach(section => dayObserver.observe(section));
+            sections.forEach(s => sectionObserver.observe(s));
+            daySections.forEach(s => dayObserver.observe(s));
         });
     </script>
 </body>
