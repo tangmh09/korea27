@@ -587,9 +587,14 @@
         // Elements for Scrollspy
         const daySections = document.querySelectorAll('div[id^="day-"]');
         const sidebarLinks = document.querySelectorAll('aside a[href^="#day-"]');
+        const sidebarContainer = document.querySelector('aside .overflow-y-auto'); // Added container reference
         
         const mainSections = document.querySelectorAll('section[id]');
         const mobileLinks = document.querySelectorAll('nav a.scroll-link');
+
+        // Trackers to optimize scroll performance
+        let lastActiveDay = ''; 
+        let lastActiveSection = '';
 
         window.addEventListener('scroll', () => {
             /* ---------------------------------------------------
@@ -611,21 +616,39 @@
                 }
             }
 
-            sidebarLinks.forEach(link => {
-                link.classList.remove('font-bold', 'text-blossom-600', 'text-teal-600', 'translate-x-1', 'transform', 'transition-all');
-                link.classList.add('text-slate-500');
-                
-                if (link.getAttribute('href') === `#${currentDay}`) {
-                    link.classList.remove('text-slate-500');
-                    link.classList.add('font-bold', 'translate-x-1', 'transform', 'transition-all', 'duration-300');
+            // Only run updates if the active day has changed
+            if (currentDay !== lastActiveDay) {
+                sidebarLinks.forEach(link => {
+                    link.classList.remove('font-bold', 'text-blossom-600', 'text-teal-600', 'translate-x-1', 'transform', 'transition-all');
+                    link.classList.add('text-slate-500');
                     
-                    if (['day-6', 'day-7', 'day-8', 'day-9'].includes(currentDay)) {
-                        link.classList.add('text-teal-600');
-                    } else {
-                        link.classList.add('text-blossom-600');
+                    if (link.getAttribute('href') === `#${currentDay}`) {
+                        link.classList.remove('text-slate-500');
+                        link.classList.add('font-bold', 'translate-x-1', 'transform', 'transition-all', 'duration-300');
+                        
+                        if (['day-6', 'day-7', 'day-8', 'day-9'].includes(currentDay)) {
+                            link.classList.add('text-teal-600');
+                        } else {
+                            link.classList.add('text-blossom-600');
+                        }
+
+                        // Auto-scroll the sidebar vertically
+                        if (sidebarContainer) {
+                            const linkRect = link.getBoundingClientRect();
+                            const containerRect = sidebarContainer.getBoundingClientRect();
+                            
+                            // Check if the link is outside or near the edge of the visible area
+                            if (linkRect.bottom > containerRect.bottom - 30 || linkRect.top < containerRect.top + 30) {
+                                sidebarContainer.scrollBy({
+                                    top: linkRect.top - containerRect.top - (containerRect.height / 2) + (linkRect.height / 2),
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }
                     }
-                }
-            });
+                });
+                lastActiveDay = currentDay;
+            }
 
             /* ---------------------------------------------------
                2. MOBILE NAV LOGIC (Highlighting Sections)
@@ -644,37 +667,41 @@
                 currentSection = 'overview';
             }
 
-            mobileLinks.forEach(link => {
-                // Reset styling
-                link.classList.remove('border-blossom-500', 'text-blossom-600', 'border-teal-500', 'text-teal-600', 'border-slate-800', 'text-slate-800');
-                link.classList.add('border-transparent', 'text-slate-500');
+            // Only run updates if the active section has changed
+            if (currentSection !== lastActiveSection) {
+                mobileLinks.forEach(link => {
+                    // Reset styling
+                    link.classList.remove('border-blossom-500', 'text-blossom-600', 'border-teal-500', 'text-teal-600', 'border-slate-800', 'text-slate-800');
+                    link.classList.add('border-transparent', 'text-slate-500');
 
-                // Apply active styling
-                if (link.getAttribute('href') === `#${currentSection}`) {
-                    link.classList.remove('border-transparent', 'text-slate-500');
-                    
-                    // Theme color based on section
-                    if (currentSection === 'jeju') {
-                        link.classList.add('border-teal-500', 'text-teal-600');
-                    } else if (currentSection === 'seoul-1' || currentSection === 'seoul-2') {
-                        link.classList.add('border-blossom-500', 'text-blossom-600');
-                    } else {
-                        link.classList.add('border-slate-800', 'text-slate-800');
+                    // Apply active styling
+                    if (link.getAttribute('href') === `#${currentSection}`) {
+                        link.classList.remove('border-transparent', 'text-slate-500');
+                        
+                        // Theme color based on section
+                        if (currentSection === 'jeju') {
+                            link.classList.add('border-teal-500', 'text-teal-600');
+                        } else if (currentSection === 'seoul-1' || currentSection === 'seoul-2') {
+                            link.classList.add('border-blossom-500', 'text-blossom-600');
+                        } else {
+                            link.classList.add('border-slate-800', 'text-slate-800');
+                        }
+                        
+                        // Auto-scroll the mobile menu horizontally if needed
+                        const navContainer = link.parentElement;
+                        const linkRect = link.getBoundingClientRect();
+                        const containerRect = navContainer.getBoundingClientRect();
+                        
+                        if (linkRect.left < containerRect.left || linkRect.right > containerRect.right) {
+                            navContainer.scrollBy({
+                                left: linkRect.left - containerRect.left - 20,
+                                behavior: 'smooth'
+                            });
+                        }
                     }
-                    
-                    // Auto-scroll the mobile menu horizontally if needed
-                    const navContainer = link.parentElement;
-                    const linkRect = link.getBoundingClientRect();
-                    const containerRect = navContainer.getBoundingClientRect();
-                    
-                    if (linkRect.left < containerRect.left || linkRect.right > containerRect.right) {
-                        navContainer.scrollBy({
-                            left: linkRect.left - containerRect.left - 20,
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
+                });
+                lastActiveSection = currentSection;
+            }
         });
 
         // Trigger once on load to catch the initial scroll position
