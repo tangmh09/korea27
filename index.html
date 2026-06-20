@@ -75,9 +75,6 @@
                 <i data-lucide="map" class="text-blossom-500 w-5 h-5"></i>
                 <h1 class="font-bold text-slate-800 text-lg truncate">South Korea '27</h1>
             </div>
-            <button onclick="window.print()" class="p-2 text-slate-500 hover:text-blossom-600 hover:bg-blossom-50 rounded-full transition-colors">
-                <i data-lucide="printer" class="w-5 h-5"></i>
-            </button>
         </div>
         <div class="px-4 pb-0 overflow-x-auto hide-scrollbar flex gap-6 text-base font-semibold text-slate-400">
             <!-- Added specific IDs for observer targeting -->
@@ -134,13 +131,6 @@
                     </ul>
                 </div>
             </nav>
-            
-            <div class="mt-6 pt-6 border-t border-slate-200">
-                <button onclick="window.print()" class="flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-slate-800 transition-colors w-full p-2 rounded-lg hover:bg-slate-100">
-                    <i data-lucide="printer" class="w-4 h-4"></i>
-                    Print Itinerary
-                </button>
-            </div>
         </aside>
 
         <!-- Main Content Area -->
@@ -148,31 +138,31 @@
             
             <!-- Header / Hero -->
             <!-- The ID here matches the href in the nav links for the intersection observer -->
-            <header id="overview" class="mb-12 scroll-mt-28 observer-section">
-                <span class="inline-block py-1 px-3 rounded-full bg-blossom-100 text-blossom-600 text-xs font-bold uppercase tracking-wider mb-4">Spring Break 2027</span>
-                <h2 class="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">Chasing Cherry Blossoms</h2>
-                <p class="text-base text-slate-600 mb-8 max-w-xl leading-relaxed">13 Days exploring the historical streets of Seoul and the natural volcanic wonders of Jeju Island during peak spring bloom.</p>
+            <header id="overview" class="mb-6 scroll-mt-28 observer-section">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-2 tracking-tight flex flex-wrap items-center gap-3">
+                    Chasing Cherry Blossoms
+                    <span class="py-0.5 px-2 rounded-full bg-blossom-100 text-blossom-600 text-[10px] font-bold uppercase tracking-wider">Spring 2027</span>
+                </h2>
+                <p class="text-sm text-slate-600 mb-4 max-w-xl leading-relaxed">13 Days exploring the historical streets of Seoul and the natural volcanic wonders of Jeju Island during peak spring bloom.</p>
                 
-                <div class="grid grid-cols-2 gap-4 text-left max-w-md">
-                    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
-                        <i data-lucide="calendar" class="w-6 h-6 text-blossom-500 mb-2"></i>
-                        <p class="text-xs text-slate-500 font-medium uppercase tracking-wider">Dates</p>
-                        <p class="font-bold text-slate-800 text-sm mt-0.5">26 Mar - 07 Apr</p>
+                <div class="flex flex-wrap gap-3 text-left">
+                    <div class="flex items-center gap-2 bg-white px-3 py-2 rounded-lg shadow-sm border border-slate-100">
+                        <i data-lucide="calendar" class="w-4 h-4 text-blossom-500"></i>
+                        <span class="font-bold text-slate-800 text-xs">26 Mar - 07 Apr</span>
                     </div>
-                    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
-                        <i data-lucide="map-pin" class="w-6 h-6 text-blossom-500 mb-2"></i>
-                        <p class="text-xs text-slate-500 font-medium uppercase tracking-wider">Destinations</p>
-                        <p class="font-bold text-slate-800 text-sm mt-0.5">Seoul & Jeju</p>
+                    <div class="flex items-center gap-2 bg-white px-3 py-2 rounded-lg shadow-sm border border-slate-100">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-blossom-500"></i>
+                        <span class="font-bold text-slate-800 text-xs">Seoul & Jeju</span>
                     </div>
                 </div>
             </header>
 
             <!-- Action Needed Alert -->
-            <div class="bg-amber-50 border-l-[4px] border-amber-400 p-4 rounded-r-xl flex gap-3 mb-12">
-                <i data-lucide="info" class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5"></i>
+            <div class="bg-amber-50 border-l-[4px] border-amber-400 p-3 rounded-r-xl flex gap-3 mb-10 shadow-sm">
+                <i data-lucide="info" class="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5"></i>
                 <div>
                     <h3 class="font-bold text-amber-800 text-sm">To-Do List</h3>
-                    <p class="text-sm text-amber-700 mt-1 leading-relaxed">Don't forget to book your domestic flights from <strong>Seoul Gimpo (GMP) to Jeju (CJU)</strong> for Mar 29, and the return for Apr 2. Also, secure a rental car in Jeju in advance!</p>
+                    <p class="text-xs text-amber-700 mt-0.5 leading-relaxed">Don't forget to book your domestic flights from <strong>Seoul Gimpo (GMP) to Jeju (CJU)</strong> for Mar 29, and the return for Apr 2. Secure a rental car in Jeju in advance!</p>
                 </div>
             </div>
 
