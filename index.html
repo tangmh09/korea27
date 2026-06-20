@@ -45,6 +45,25 @@
         .nav-link.active-nav-desktop-teal {
             color: #0d9488; /* teal-600 */
         }
+
+        /* Map Links */
+        .map-link {
+            font-weight: 600;
+            color: #334155;
+            text-decoration: underline;
+            text-decoration-style: dashed;
+            text-decoration-color: #cbd5e1;
+            text-underline-offset: 4px;
+            transition: all 0.2s ease-in-out;
+        }
+        .map-link:hover {
+            color: #db2777;
+            text-decoration-color: #db2777;
+        }
+        .map-link-teal:hover {
+            color: #0d9488;
+            text-decoration-color: #0d9488;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-blossom-200 selection:text-blossom-900">
@@ -176,11 +195,11 @@
                             <ul class="space-y-4">
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="plane-landing" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>3:40 PM:</strong> Arrive at Incheon (ICN). Pick up a T-Money transport card at a convenience store and take the AREX train to the city.</span>
+                                    <span class="leading-relaxed"><strong>3:40 PM:</strong> Arrive at <a href="https://maps.google.com/?q=Incheon+International+Airport" target="_blank" class="map-link">Incheon (ICN)</a>. Pick up a T-Money transport card at a convenience store and take the AREX train to the city.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="hotel" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>5:30 PM:</strong> Check into your hotel (Myeongdong or Hongdae recommended for first-timers).</span>
+                                    <span class="leading-relaxed"><strong>5:30 PM:</strong> Check into your hotel (<a href="https://maps.google.com/?q=Myeongdong,+Seoul" target="_blank" class="map-link">Myeongdong</a> or <a href="https://maps.google.com/?q=Hongdae,+Seoul" target="_blank" class="map-link">Hongdae</a> recommended for first-timers).</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="utensils" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
@@ -188,7 +207,7 @@
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="footprints" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>9:00 PM:</strong> Take a post-dinner stroll along the illuminated Cheonggyecheon Stream or browse the Myeongdong Night Market for street food desserts (Hotteok).</span>
+                                    <span class="leading-relaxed"><strong>9:00 PM:</strong> Take a post-dinner stroll along the illuminated <a href="https://maps.google.com/?q=Cheonggyecheon+Stream" target="_blank" class="map-link">Cheonggyecheon Stream</a> or browse the <a href="https://maps.google.com/?q=Myeongdong+Night+Market" target="_blank" class="map-link">Myeongdong Night Market</a> for street food desserts (Hotteok).</span>
                                 </li>
                             </ul>
                         </div>
@@ -202,19 +221,19 @@
                             <ul class="space-y-4">
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="camera" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>9:30 AM:</strong> Gyeongbokgung Palace. Rent a Hanbok nearby for free entry and catch the Royal Guard Changing Ceremony at 10:00 AM.</span>
+                                    <span class="leading-relaxed"><strong>9:30 AM:</strong> <a href="https://maps.google.com/?q=Gyeongbokgung+Palace" target="_blank" class="map-link">Gyeongbokgung Palace</a>. Rent a Hanbok nearby for free entry and catch the Royal Guard Changing Ceremony at 10:00 AM.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="landmark" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>12:30 PM:</strong> Walk past the serene Jogyesa Temple on your way to lunch.</span>
+                                    <span class="leading-relaxed"><strong>12:30 PM:</strong> Walk past the serene <a href="https://maps.google.com/?q=Jogyesa+Temple" target="_blank" class="map-link">Jogyesa Temple</a> on your way to lunch.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="map" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>2:00 PM:</strong> Stroll the narrow, sloping alleys of Bukchon Hanok Village. Afterward, head down to Insadong for traditional tea and artisan crafts.</span>
+                                    <span class="leading-relaxed"><strong>2:00 PM:</strong> Stroll the narrow, sloping alleys of <a href="https://maps.google.com/?q=Bukchon+Hanok+Village" target="_blank" class="map-link">Bukchon Hanok Village</a>. Afterward, head down to <a href="https://maps.google.com/?q=Insadong" target="_blank" class="map-link">Insadong</a> for traditional tea and artisan crafts.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="utensils" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>6:30 PM:</strong> Dinner at Gwangjang Market. Sit at a vendor stall and try Bindaetteok (mung bean pancakes) and Mayak Gimbap.</span>
+                                    <span class="leading-relaxed"><strong>6:30 PM:</strong> Dinner at <a href="https://maps.google.com/?q=Gwangjang+Market" target="_blank" class="map-link">Gwangjang Market</a>. Sit at a vendor stall and try Bindaetteok (mung bean pancakes) and Mayak Gimbap.</span>
                                 </li>
                             </ul>
                         </div>
@@ -228,19 +247,19 @@
                             <ul class="space-y-4">
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="shield" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>9:30 AM:</strong> Start at the War Memorial of Korea. An incredibly moving and expansive outdoor/indoor museum.</span>
+                                    <span class="leading-relaxed"><strong>9:30 AM:</strong> Start at the <a href="https://maps.google.com/?q=War+Memorial+of+Korea" target="_blank" class="map-link">War Memorial of Korea</a>. An incredibly moving and expansive outdoor/indoor museum.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="landmark" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>12:00 PM:</strong> Walk or take a short cab to the National Museum of Korea to view millennia of Korean history.</span>
+                                    <span class="leading-relaxed"><strong>12:00 PM:</strong> Walk or take a short cab to the <a href="https://maps.google.com/?q=National+Museum+of+Korea" target="_blank" class="map-link">National Museum of Korea</a> to view millennia of Korean history.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="coffee" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>3:00 PM:</strong> Head up to Itaewon/Hannam-dong. Grab a late international lunch and explore the indie boutiques and cafes.</span>
+                                    <span class="leading-relaxed"><strong>3:00 PM:</strong> Head up to <a href="https://maps.google.com/?q=Itaewon" target="_blank" class="map-link">Itaewon</a>/<a href="https://maps.google.com/?q=Hannam-dong" target="_blank" class="map-link">Hannam-dong</a>. Grab a late international lunch and explore the indie boutiques and cafes.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="mountain" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>6:00 PM:</strong> Take the Namsan Cable Car up to N Seoul Tower. Catch the sunset and see the city light up.</span>
+                                    <span class="leading-relaxed"><strong>6:00 PM:</strong> Take the <a href="https://maps.google.com/?q=Namsan+Cable+Car" target="_blank" class="map-link">Namsan Cable Car</a> up to <a href="https://maps.google.com/?q=N+Seoul+Tower" target="_blank" class="map-link">N Seoul Tower</a>. Catch the sunset and see the city light up.</span>
                                 </li>
                             </ul>
                         </div>
@@ -267,19 +286,19 @@
                             <ul class="space-y-4">
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="plane" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>Morning:</strong> Fly from Seoul Gimpo (GMP) to Jeju (CJU). Pick up your rental car at the airport.</span>
+                                    <span class="leading-relaxed"><strong>Morning:</strong> Fly from <a href="https://maps.google.com/?q=Gimpo+International+Airport" target="_blank" class="map-link map-link-teal">Seoul Gimpo (GMP)</a> to <a href="https://maps.google.com/?q=Jeju+International+Airport" target="_blank" class="map-link map-link-teal">Jeju (CJU)</a>. Pick up your rental car at the airport.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="flower-2" class="w-4 h-4 mt-0.5 text-teal-500 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>11:30 AM:</strong> Drive through <strong>Jeonnong-ro Cherry Blossom Street</strong> to see the island in full bloom.</span>
+                                    <span class="leading-relaxed"><strong>11:30 AM:</strong> Drive through <strong><a href="https://maps.google.com/?q=Jeonnong-ro+Cherry+Blossom+Street" target="_blank" class="map-link map-link-teal">Jeonnong-ro Cherry Blossom Street</a></strong> to see the island in full bloom.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="waves" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>2:00 PM:</strong> Head west. Walk the Aewol Handam Coastal Trail. Grab coffee at Cafe Knotted or one of the ocean-view glass cafes.</span>
+                                    <span class="leading-relaxed"><strong>2:00 PM:</strong> Head west. Walk the <a href="https://maps.google.com/?q=Aewol+Handam+Coastal+Trail" target="_blank" class="map-link map-link-teal">Aewol Handam Coastal Trail</a>. Grab coffee at <a href="https://maps.google.com/?q=Cafe+Knotted+Jeju" target="_blank" class="map-link map-link-teal">Cafe Knotted</a> or one of the ocean-view glass cafes.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="utensils" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>6:30 PM:</strong> Head back to Jeju City. Explore Dongmun Night Market for abalone kimbap, citrus juices, and street food for dinner.</span>
+                                    <span class="leading-relaxed"><strong>6:30 PM:</strong> Head back to Jeju City. Explore <a href="https://maps.google.com/?q=Dongmun+Traditional+Market" target="_blank" class="map-link map-link-teal">Dongmun Night Market</a> for abalone kimbap, citrus juices, and street food for dinner.</span>
                                 </li>
                             </ul>
                         </div>
@@ -293,23 +312,23 @@
                             <ul class="space-y-4">
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="leaf" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>9:30 AM:</strong> Drive to Osulloc Tea Museum. Walk the green tea fields and get a matcha roll cake at Innisfree Jeju House.</span>
+                                    <span class="leading-relaxed"><strong>9:30 AM:</strong> Drive to <a href="https://maps.google.com/?q=Osulloc+Tea+Museum" target="_blank" class="map-link map-link-teal">Osulloc Tea Museum</a>. Walk the green tea fields and get a matcha roll cake at <a href="https://maps.google.com/?q=Innisfree+Jeju+House" target="_blank" class="map-link map-link-teal">Innisfree Jeju House</a>.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="mountain" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>12:30 PM:</strong> View Sanbangsan Mountain, heavily surrounded by bright yellow canola flowers during spring.</span>
+                                    <span class="leading-relaxed"><strong>12:30 PM:</strong> View <a href="https://maps.google.com/?q=Sanbangsan+Mountain" target="_blank" class="map-link map-link-teal">Sanbangsan Mountain</a>, heavily surrounded by bright yellow canola flowers during spring.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="camera" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>2:00 PM:</strong> Hike down to Yongmeori Coast (Dragon Head Coast) to see spectacular layered volcanic rock formations right on the water.</span>
+                                    <span class="leading-relaxed"><strong>2:00 PM:</strong> Hike down to <a href="https://maps.google.com/?q=Yongmeori+Coast" target="_blank" class="map-link map-link-teal">Yongmeori Coast</a> (Dragon Head Coast) to see spectacular layered volcanic rock formations right on the water.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="droplets" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>4:30 PM:</strong> Drive to Seogwipo. View the beautiful Cheonjiyeon Waterfall via a peaceful forested path.</span>
+                                    <span class="leading-relaxed"><strong>4:30 PM:</strong> Drive to Seogwipo. View the beautiful <a href="https://maps.google.com/?q=Cheonjiyeon+Waterfall" target="_blank" class="map-link map-link-teal">Cheonjiyeon Waterfall</a> via a peaceful forested path.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="utensils" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>6:30 PM:</strong> Dinner and exploring at Seogwipo Maeil Olle Market. Try Jeju black pork skewers!</span>
+                                    <span class="leading-relaxed"><strong>6:30 PM:</strong> Dinner and exploring at <a href="https://maps.google.com/?q=Seogwipo+Maeil+Olle+Market" target="_blank" class="map-link map-link-teal">Seogwipo Maeil Olle Market</a>. Try Jeju black pork skewers!</span>
                                 </li>
                             </ul>
                         </div>
@@ -323,7 +342,7 @@
                             <ul class="space-y-4">
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="sun" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>9:00 AM:</strong> Hike Seongsan Ilchulbong (Sunrise Peak). The 20-30 min stair climb rewards you with amazing volcanic crater views.</span>
+                                    <span class="leading-relaxed"><strong>9:00 AM:</strong> Hike <a href="https://maps.google.com/?q=Seongsan+Ilchulbong" target="_blank" class="map-link map-link-teal">Seongsan Ilchulbong</a> (Sunrise Peak). The 20-30 min stair climb rewards you with amazing volcanic crater views.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="eye" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
@@ -331,11 +350,11 @@
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="map" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>2:00 PM:</strong> Walk the stunning Seopjikoji coastal trails, famous for its lighthouse and cliffside views.</span>
+                                    <span class="leading-relaxed"><strong>2:00 PM:</strong> Walk the stunning <a href="https://maps.google.com/?q=Seopjikoji" target="_blank" class="map-link map-link-teal">Seopjikoji</a> coastal trails, famous for its lighthouse and cliffside views.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="trees" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>4:00 PM:</strong> Take a relaxing walk through Bijarim Forest, an ancient forest filled with nutmeg yew trees.</span>
+                                    <span class="leading-relaxed"><strong>4:00 PM:</strong> Take a relaxing walk through <a href="https://maps.google.com/?q=Bijarim+Forest" target="_blank" class="map-link map-link-teal">Bijarim Forest</a>, an ancient forest filled with nutmeg yew trees.</span>
                                 </li>
                             </ul>
                         </div>
@@ -349,11 +368,11 @@
                             <ul class="space-y-4">
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="ship" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>9:00 AM:</strong> Take the 15-minute car ferry from Seongsan Port to Udo Island.</span>
+                                    <span class="leading-relaxed"><strong>9:00 AM:</strong> Take the 15-minute car ferry from <a href="https://maps.google.com/?q=Seongsan+Port" target="_blank" class="map-link map-link-teal">Seongsan Port</a> to <a href="https://maps.google.com/?q=Udo+Island+Jeju" target="_blank" class="map-link map-link-teal">Udo Island</a>.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="bike" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>10:00 AM:</strong> Rent electric bikes or a sidecar to circumnavigate. Stop at Seobin Baeksa (popcorn sand beach) and Hagosudong Beach.</span>
+                                    <span class="leading-relaxed"><strong>10:00 AM:</strong> Rent electric bikes or a sidecar to circumnavigate. Stop at <a href="https://maps.google.com/?q=Seobin+Baeksa" target="_blank" class="map-link map-link-teal">Seobin Baeksa</a> (popcorn sand beach) and <a href="https://maps.google.com/?q=Hagosudong+Beach" target="_blank" class="map-link map-link-teal">Hagosudong Beach</a>.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="coffee" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
@@ -361,7 +380,7 @@
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="sunset" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>4:30 PM:</strong> Take the ferry back. Do a scenic coastal drive along the northeast Jongdal-ri coastal road before sunset.</span>
+                                    <span class="leading-relaxed"><strong>4:30 PM:</strong> Take the ferry back. Do a scenic coastal drive along the northeast <a href="https://maps.google.com/?q=Jongdal-ri+Coastal+Road" target="_blank" class="map-link map-link-teal">Jongdal-ri coastal road</a> before sunset.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="utensils" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
@@ -392,19 +411,19 @@
                             <ul class="space-y-4">
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="shopping-bag" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>9:00 AM:</strong> Dongmun Market in Jeju for souvenirs. Buy Hallabong orange chocolates and matcha goods.</span>
+                                    <span class="leading-relaxed"><strong>9:00 AM:</strong> <a href="https://maps.google.com/?q=Dongmun+Traditional+Market" target="_blank" class="map-link">Dongmun Market</a> in Jeju for souvenirs. Buy Hallabong orange chocolates and matcha goods.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="plane-takeoff" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>Midday:</strong> Drop off the rental car and fly from Jeju (CJU) back to Seoul Gimpo (GMP).</span>
+                                    <span class="leading-relaxed"><strong>Midday:</strong> Drop off the rental car and fly from Jeju (CJU) back to <a href="https://maps.google.com/?q=Gimpo+International+Airport" target="_blank" class="map-link">Seoul Gimpo (GMP)</a>.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="landmark" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>4:00 PM:</strong> Check into Seoul hotel. Head to Gangnam and visit the peaceful Bongeunsa Temple.</span>
+                                    <span class="leading-relaxed"><strong>4:00 PM:</strong> Check into Seoul hotel. Head to Gangnam and visit the peaceful <a href="https://maps.google.com/?q=Bongeunsa+Temple" target="_blank" class="map-link">Bongeunsa Temple</a>.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="building" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>5:30 PM:</strong> Cross the street to Starfield COEX Mall. Visit the massive, Instagram-famous Starfield Library.</span>
+                                    <span class="leading-relaxed"><strong>5:30 PM:</strong> Cross the street to <a href="https://maps.google.com/?q=Starfield+COEX+Mall" target="_blank" class="map-link">Starfield COEX Mall</a>. Visit the massive, Instagram-famous <a href="https://maps.google.com/?q=Starfield+Library" target="_blank" class="map-link">Starfield Library</a>.</span>
                                 </li>
                             </ul>
                         </div>
@@ -418,7 +437,7 @@
                             <ul class="space-y-4">
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="flower-2" class="w-4 h-4 mt-0.5 text-blossom-500 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>10:00 AM:</strong> Yeouido Hangang Park. Walk the famous cherry blossom tunnels! This is the peak spring festival.</span>
+                                    <span class="leading-relaxed"><strong>10:00 AM:</strong> <a href="https://maps.google.com/?q=Yeouido+Hangang+Park" target="_blank" class="map-link">Yeouido Hangang Park</a>. Walk the famous cherry blossom tunnels! This is the peak spring festival.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="bike" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
@@ -430,7 +449,7 @@
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="footprints" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>5:00 PM:</strong> Take the subway to Hongdae. Walk the Gyeongui Line Forest Park in Yeonnam-dong (great for youth culture and cafes).</span>
+                                    <span class="leading-relaxed"><strong>5:00 PM:</strong> Take the subway to <a href="https://maps.google.com/?q=Hongdae,+Seoul" target="_blank" class="map-link">Hongdae</a>. Walk the <a href="https://maps.google.com/?q=Gyeongui+Line+Forest+Park" target="_blank" class="map-link">Gyeongui Line Forest Park</a> in <a href="https://maps.google.com/?q=Yeonnam-dong" target="_blank" class="map-link">Yeonnam-dong</a> (great for youth culture and cafes).</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="music" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
@@ -448,19 +467,19 @@
                             <ul class="space-y-4">
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="flower-2" class="w-4 h-4 mt-0.5 text-blossom-500 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>10:00 AM:</strong> Seokchon Lake Park. The entire figure-eight lake is surrounded by densely packed blooming trees.</span>
+                                    <span class="leading-relaxed"><strong>10:00 AM:</strong> <a href="https://maps.google.com/?q=Seokchon+Lake+Park" target="_blank" class="map-link">Seokchon Lake Park</a>. The entire figure-eight lake is surrounded by densely packed blooming trees.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="shopping-cart" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>12:00 PM:</strong> Explore the massive Lotte World Mall for lunch and window shopping.</span>
+                                    <span class="leading-relaxed"><strong>12:00 PM:</strong> Explore the massive <a href="https://maps.google.com/?q=Lotte+World+Mall" target="_blank" class="map-link">Lotte World Mall</a> for lunch and window shopping.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="building" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>2:30 PM:</strong> Head up to the Seoul Sky Observatory (Lotte World Tower - the 6th tallest building in the world) for unbelievable 360-degree views.</span>
+                                    <span class="leading-relaxed"><strong>2:30 PM:</strong> Head up to the <a href="https://maps.google.com/?q=Seoul+Sky+Observatory" target="_blank" class="map-link">Seoul Sky Observatory</a> (<a href="https://maps.google.com/?q=Lotte+World+Tower" target="_blank" class="map-link">Lotte World Tower</a> - the 6th tallest building in the world) for unbelievable 360-degree views.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="map" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>5:00 PM:</strong> Take a short ride to Olympic Park. Rent a tandem bike, find the famous 'Lone Tree', and enjoy a peaceful evening.</span>
+                                    <span class="leading-relaxed"><strong>5:00 PM:</strong> Take a short ride to <a href="https://maps.google.com/?q=Olympic+Park,+Seoul" target="_blank" class="map-link">Olympic Park</a>. Rent a tandem bike, find the famous 'Lone Tree', and enjoy a peaceful evening.</span>
                                 </li>
                             </ul>
                         </div>
@@ -474,19 +493,19 @@
                             <ul class="space-y-4">
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="tree-deciduous" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>10:00 AM:</strong> Seoul Forest Park. Enjoy the last of the blossoms, tulip fields, and feed the deer.</span>
+                                    <span class="leading-relaxed"><strong>10:00 AM:</strong> <a href="https://maps.google.com/?q=Seoul+Forest+Park" target="_blank" class="map-link">Seoul Forest Park</a>. Enjoy the last of the blossoms, tulip fields, and feed the deer.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="coffee" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>12:30 PM:</strong> Walk over to Seongsu-dong (the "Brooklyn of Seoul"). Hop between industrial-chic cafes like Cafe Onion or Grandpa Factory.</span>
+                                    <span class="leading-relaxed"><strong>12:30 PM:</strong> Walk over to <a href="https://maps.google.com/?q=Seongsu-dong" target="_blank" class="map-link">Seongsu-dong</a> (the "Brooklyn of Seoul"). Hop between industrial-chic cafes like <a href="https://maps.google.com/?q=Cafe+Onion+Seongsu" target="_blank" class="map-link">Cafe Onion</a> or <a href="https://maps.google.com/?q=Grandpa+Factory+Seongsu" target="_blank" class="map-link">Grandpa Factory</a>.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="brush" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>4:00 PM:</strong> Take the subway to Dongdaemun Design Plaza (DDP) to admire Zaha Hadid's futuristic architecture.</span>
+                                    <span class="leading-relaxed"><strong>4:00 PM:</strong> Take the subway to <a href="https://maps.google.com/?q=Dongdaemun+Design+Plaza" target="_blank" class="map-link">Dongdaemun Design Plaza (DDP)</a> to admire Zaha Hadid's futuristic architecture.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="utensils" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>7:00 PM:</strong> Eat dinner in the Dongdaemun area (famous for Dakhanmari - whole chicken soup) and check out the late-night wholesale fashion markets.</span>
+                                    <span class="leading-relaxed"><strong>7:00 PM:</strong> Eat dinner in the <a href="https://maps.google.com/?q=Dongdaemun" target="_blank" class="map-link">Dongdaemun</a> area (famous for Dakhanmari - whole chicken soup) and check out the late-night wholesale fashion markets.</span>
                                 </li>
                             </ul>
                         </div>
@@ -500,15 +519,15 @@
                             <ul class="space-y-4">
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="shopping-cart" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>10:00 AM:</strong> Namdaemun Market. Have Kalguksu (knife-cut noodles) in the famous noodle alley and buy traditional souvenirs.</span>
+                                    <span class="leading-relaxed"><strong>10:00 AM:</strong> <a href="https://maps.google.com/?q=Namdaemun+Market" target="_blank" class="map-link">Namdaemun Market</a>. Have Kalguksu (knife-cut noodles) in the famous noodle alley and buy traditional souvenirs.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="gift" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>1:00 PM:</strong> Visit the Lotte Department Store basement food hall in Myeongdong for premium snacks, teas, and treats to take home.</span>
+                                    <span class="leading-relaxed"><strong>1:00 PM:</strong> Visit the <a href="https://maps.google.com/?q=Lotte+Department+Store+Main" target="_blank" class="map-link">Lotte Department Store</a> basement food hall in Myeongdong for premium snacks, teas, and treats to take home.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="map" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>3:00 PM:</strong> Final shopping run in Myeongdong to stock up on K-Beauty and skincare products.</span>
+                                    <span class="leading-relaxed"><strong>3:00 PM:</strong> Final shopping run in <a href="https://maps.google.com/?q=Myeongdong,+Seoul" target="_blank" class="map-link">Myeongdong</a> to stock up on K-Beauty and skincare products.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="utensils" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
@@ -526,7 +545,7 @@
                             <ul class="space-y-4">
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="train" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
-                                    <span class="leading-relaxed"><strong>7:30 AM:</strong> Check out and head to Incheon International Airport (ICN) via the AREX Express Train.</span>
+                                    <span class="leading-relaxed"><strong>7:30 AM:</strong> Check out and head to <a href="https://maps.google.com/?q=Incheon+International+Airport" target="_blank" class="map-link">Incheon International Airport (ICN)</a> via the AREX Express Train.</span>
                                 </li>
                                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                                     <i data-lucide="utensils" class="w-4 h-4 mt-0.5 text-slate-400 shrink-0"></i>
@@ -543,9 +562,6 @@
                 </div>
             </section>
             
-            <footer class="pt-6 border-t border-slate-200 text-slate-400 text-sm">
-                <p>Prepared with ❤️ for your 2027 South Korea Trip</p>
-            </footer>
         </main>
     </div>
 
