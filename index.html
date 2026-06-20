@@ -75,9 +75,9 @@
                     Seoul (Part 1)
                 </a>
                 <ul class="space-y-2 border-l-2 border-slate-100 ml-1 pl-3 text-sm">
-                    <li><a href="#day-1" class="text-slate-500 hover:text-blossom-600 transition-colors scroll-link block py-1">Day 1: Arrival</a></li>
-                    <li><a href="#day-2" class="text-slate-500 hover:text-blossom-600 transition-colors scroll-link block py-1">Day 2: Palaces & Traditions</a></li>
-                    <li><a href="#day-3" class="text-slate-500 hover:text-blossom-600 transition-colors scroll-link block py-1">Day 3: Views & Culture</a></li>
+                    <li><a href="#day-1" class="text-slate-500 hover:text-blossom-600 transition-colors scroll-link block py-1">26 Mar: Arrival</a></li>
+                    <li><a href="#day-2" class="text-slate-500 hover:text-blossom-600 transition-colors scroll-link block py-1">27 Mar: Palaces & Traditions</a></li>
+                    <li><a href="#day-3" class="text-slate-500 hover:text-blossom-600 transition-colors scroll-link block py-1">28 Mar: Views & Culture</a></li>
                 </ul>
             </div>
 
@@ -87,10 +87,10 @@
                     Jeju Island
                 </a>
                 <ul class="space-y-2 border-l-2 border-slate-100 ml-1 pl-3 text-sm">
-                    <li><a href="#day-4" class="text-slate-500 hover:text-teal-600 transition-colors scroll-link block py-1">Day 4: Hello, Jeju!</a></li>
-                    <li><a href="#day-5" class="text-slate-500 hover:text-teal-600 transition-colors scroll-link block py-1">Day 5: West & South</a></li>
-                    <li><a href="#day-6" class="text-slate-500 hover:text-teal-600 transition-colors scroll-link block py-1">Day 6: Sunrise Peak</a></li>
-                    <li><a href="#day-7" class="text-slate-500 hover:text-teal-600 transition-colors scroll-link block py-1">Day 7: Udo Island</a></li>
+                    <li><a href="#day-4" class="text-slate-500 hover:text-teal-600 transition-colors scroll-link block py-1">29 Mar: Hello, Jeju!</a></li>
+                    <li><a href="#day-5" class="text-slate-500 hover:text-teal-600 transition-colors scroll-link block py-1">30 Mar: West & South</a></li>
+                    <li><a href="#day-6" class="text-slate-500 hover:text-teal-600 transition-colors scroll-link block py-1">31 Mar: Sunrise Peak</a></li>
+                    <li><a href="#day-7" class="text-slate-500 hover:text-teal-600 transition-colors scroll-link block py-1">01 Apr: Udo Island</a></li>
                 </ul>
             </div>
 
@@ -100,12 +100,12 @@
                     Seoul (Part 2)
                 </a>
                 <ul class="space-y-2 border-l-2 border-slate-100 ml-1 pl-3 text-sm">
-                    <li><a href="#day-8" class="text-slate-500 hover:text-blossom-600 transition-colors scroll-link block py-1">Day 8: Return to Capital</a></li>
-                    <li><a href="#day-9" class="text-slate-500 hover:text-blossom-600 transition-colors scroll-link block py-1">Day 9: Cherry Blossoms</a></li>
-                    <li><a href="#day-10" class="text-slate-500 hover:text-blossom-600 transition-colors scroll-link block py-1">Day 10: Lake Blooms</a></li>
-                    <li><a href="#day-11" class="text-slate-500 hover:text-blossom-600 transition-colors scroll-link block py-1">Day 11: Trendy Cafes</a></li>
-                    <li><a href="#day-12" class="text-slate-500 hover:text-blossom-600 transition-colors scroll-link block py-1">Day 12: Shopping</a></li>
-                    <li><a href="#day-13" class="text-slate-500 hover:text-blossom-600 transition-colors scroll-link block py-1">Day 13: Departure</a></li>
+                    <li><a href="#day-8" class="text-slate-500 hover:text-blossom-600 transition-colors scroll-link block py-1">02 Apr: Return to Capital</a></li>
+                    <li><a href="#day-9" class="text-slate-500 hover:text-blossom-600 transition-colors scroll-link block py-1">03 Apr: Cherry Blossoms</a></li>
+                    <li><a href="#day-10" class="text-slate-500 hover:text-blossom-600 transition-colors scroll-link block py-1">04 Apr: Lake Blooms</a></li>
+                    <li><a href="#day-11" class="text-slate-500 hover:text-blossom-600 transition-colors scroll-link block py-1">05 Apr: Trendy Cafes</a></li>
+                    <li><a href="#day-12" class="text-slate-500 hover:text-blossom-600 transition-colors scroll-link block py-1">06 Apr: Shopping</a></li>
+                    <li><a href="#day-13" class="text-slate-500 hover:text-blossom-600 transition-colors scroll-link block py-1">07 Apr: Departure</a></li>
                 </ul>
             </div>
         </div>
@@ -650,12 +650,22 @@
         window.addEventListener('scroll', () => {
             let current = '';
             daySections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                // Trigger highlight when the section reaches the upper-middle of the screen
-                if (window.scrollY >= (sectionTop - 250)) { 
+                // Fix: calculate position relative to the visible window (viewport), not the parent div
+                const rect = section.getBoundingClientRect();
+                
+                // Trigger highlight when the section reaches the upper portion of the screen (top 40%)
+                if (rect.top <= window.innerHeight * 0.4) { 
                     current = section.getAttribute('id');
                 }
             });
+
+            // Ensure first item is highlighted if we are at the very top but haven't technically reached it
+            if (!current && window.scrollY > 0 && daySections.length > 0) {
+                const firstRect = daySections[0].getBoundingClientRect();
+                if (firstRect.top < window.innerHeight) {
+                    current = daySections[0].getAttribute('id');
+                }
+            }
 
             sidebarLinks.forEach(link => {
                 // Reset styling for all links
